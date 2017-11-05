@@ -1,0 +1,237 @@
+/*
+ * Binary sudoku styles
+ *
+ * @author Dwight Van der Velpen <dfr34kz@gmail.com>
+ */
+
+* {
+	font-family: 'Roboto', sans-serif;
+
+	margin: 0;
+	padding: 0;
+}
+
+h1 {
+	font-family: 'Permanent Marker', cursive;
+	font-size: 40px;
+	line-height: 40px;
+	height: 10%;
+
+	display: inline-block;
+	margin: 0 auto;
+	padding: 5px;
+
+	cursor: pointer;
+	cursor: hand;
+}
+
+h2 {
+	font-family: 'Permanent Marker', cursive;
+	font-size: 20px;
+	line-height: 20px;
+	margin-bottom: 10px;
+}
+
+a {
+	font-family: inherit;
+	font-size: inherit;
+
+	text-decoration: none;
+
+	color: inherit;
+}
+
+ol,
+ul {
+	list-style-position: inside;
+	margin: 0 10px;
+	text-align: left;
+}
+
+li {
+	font-size: 15px;
+}
+
+hr {
+	margin: 20px 10px 10px;
+	border-top: 2px dashed rgba(0, 0, 0, 0.2);
+	box-shadow: 0;
+}
+
+body {
+	font-size: 18px;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+
+	margin: 20px;
+
+	text-align: center;
+
+	background-color: #e1d9c0;
+
+	-webkit-perspective: 1600px;
+	-moz-perspective: 1600px;
+	-o-perspective: 1600px;
+	perspective: 1600px;
+}
+
+#card {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 5%;
+	left: 0;
+
+	max-width: 500px;
+	max-height: 500px;
+	margin: 0 auto;
+
+	width: 100%;
+	height: 100%;
+
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-o-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+
+	-webkit-transition: -webkit-transform 1100ms;
+	-moz-transition: -moz-transform 1100ms;
+	-o-transition: -o-transform 1100ms;
+	transition: transform 1100ms;
+
+	border: 2px solid #8b743d;
+	background: white;
+
+	-webkit-transform-style: preserve-3d;
+	-moz-transform-style: preserve-3d;
+	-o-transform-style: preserve-3d;
+	transform-style: preserve-3d;
+}
+
+#card.flipL {
+	-webkit-transform: rotateY( 180deg);
+	-moz-transform: rotateY( 180deg);
+	-o-transform: rotateY( 180deg);
+	transform: rotateY( 180deg);
+}
+
+#card.flipR {
+	-webkit-transform: rotateY( -180deg);
+	-moz-transform: rotateY( -180deg);
+	-o-transform: rotateY( -180deg);
+	transform: rotateY( -180deg);
+}
+
+.side {
+	position: absolute;
+
+	width: 100%;
+	height: 100%;
+
+	background-color: #fff;
+
+	-webkit-backface-visibility: hidden;
+	-moz-backface-visibility: hidden;
+	-o-backface-visibility: hidden;
+	backface-visibility: hidden;
+}
+
+.rotated {
+	-webkit-transform: rotateY( 180deg);
+	-moz-transform: rotateY( 180deg);
+	-o-transform: rotateY( 180deg);
+	transform: rotateY( 180deg);
+	z-index: 2;
+}
+
+footer {
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	left: 0;
+
+	height: 4%;
+}
+
+.hidden {
+	display: none;
+}
+
+#buttonPlacer {
+	position: absolute;
+	top: 10px;
+}
+
+.TR {
+	right: 15px;
+}
+
+.TL {
+	left: 15px;
+}
+
+.round-button {
+	width: 30px;
+}
+
+.round-button div p:hover {
+	background-color: #888;
+}
+
+.round-button p.ttl {
+	font-size: 15px;
+	font-weight: bold;
+}
+
+.round-button p.ttl.g {
+	margin-left: -4px;
+}
+
+.round-button p.ttl.m {
+	margin-left: -2px;
+}
+
+.round-button p.ttl.h {
+	margin-left: 2px;
+}
+
+.round-button div p.fakeHover {
+	background-color: #ffa76c;
+}
+
+.round-button-circle {
+	overflow: hidden;
+
+	width: 100%;
+	height: 0;
+	padding-bottom: 100%;
+
+	border: 2px solid #888;
+	border-radius: 50%;
+	box-shadow: 0 0 3px #888;
+}
+
+
+.round-button div p {
+	font-size: 1.2em;
+	font-weight: bold;
+	line-height: 1em;
+
+	width: 100%;
+	margin-top: -.5em;
+	padding-top: 50%;
+	padding-bottom: 50%;
+
+	cursor: pointer;
+	cursor: hand;
+	-webkit-transition: background-color 200ms ease;
+	-ms-transition: background-color 200ms ease;
+	transition: background-color 200ms ease;
+}
