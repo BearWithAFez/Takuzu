@@ -20,7 +20,23 @@
 				</div>
 				<p class="ttl g">Game</p>
 			</div>
-			<p>Here I will put the Help.</p>
+			<div id="rules">
+				<h2>Rules:</h2>
+				<ol>
+					<li>Each box should contain a zero or a one.</li>
+					<li>No more than two similar numbers next to or below each other are allowed.</li>
+					<li>Each row and each column should contain an equal number of zeros and ones.</li>
+					<li>Each row is unique and each column is unique.</li>
+				</ol>
+			</div>
+			<div id="howto">
+				<h2>How-To:</h2>
+				<ul>
+					<li>Tap a cell to toggle the value.</li>
+					<li>When a row/collumn is red, there is an error.</li>
+					<li>Fill the board with no errors to win!</li>
+				</ul>
+			</div>
 		</div>
 		<div id="game" class="side">
 			<h1>Takuzu!</h1>
@@ -36,7 +52,132 @@
 				</div>
 				<p class="ttl h">Help</p>
 			</div>
-			<p>Here I will put the Game.</p>
+			<p class="ib"><span id="dif">Easy</span> - <span id="lvl">01</span></p>
+			<table>
+				<tr class="row">
+					<td>
+						<p class="cell">0</p>
+					</td>
+					<td>
+						<p class="cell">0</p>
+					</td>
+					<td>
+						<p class="cell">0</p>
+					</td>
+					<td>
+						<p class="cell">0</p>
+					</td>
+					<td>
+						<p class="cell">0</p>
+					</td>
+					<td>
+						<p class="cell">0</p>
+					</td>
+				</tr>
+				<tr class="row">
+					<td>
+						<p class="cell">0</p>
+					</td>
+					<td>
+						<p class="cell">0</p>
+					</td>
+					<td>
+						<p class="cell">0</p>
+					</td>
+					<td>
+						<p class="cell">0</p>
+					</td>
+					<td>
+						<p class="cell">0</p>
+					</td>
+					<td>
+						<p class="cell">0</p>
+					</td>
+				</tr>
+				<tr class="row">
+					<td>
+						<p class="cell">0</p>
+					</td>
+					<td>
+						<p class="cell">0</p>
+					</td>
+					<td>
+						<p class="cell">0</p>
+					</td>
+					<td>
+						<p class="cell">0</p>
+					</td>
+					<td>
+						<p class="cell">0</p>
+					</td>
+					<td>
+						<p class="cell">0</p>
+					</td>
+				</tr>
+				<tr class="row">
+					<td>
+						<p class="cell">0</p>
+					</td>
+					<td>
+						<p class="cell">0</p>
+					</td>
+					<td>
+						<p class="cell">0</p>
+					</td>
+					<td>
+						<p class="cell">0</p>
+					</td>
+					<td>
+						<p class="cell">0</p>
+					</td>
+					<td>
+						<p class="cell">0</p>
+					</td>
+				</tr>
+				<tr class="row">
+					<td>
+						<p class="cell">0</p>
+					</td>
+					<td>
+						<p class="cell">0</p>
+					</td>
+					<td>
+						<p class="cell">0</p>
+					</td>
+					<td>
+						<p class="cell">0</p>
+					</td>
+					<td>
+						<p class="cell">0</p>
+					</td>
+					<td>
+						<p class="cell">0</p>
+					</td>
+				</tr>
+				<tr class="row">
+					<td>
+						<p class="cell">0</p>
+					</td>
+					<td>
+						<p class="cell">0</p>
+					</td>
+					<td>
+						<p class="cell">0</p>
+					</td>
+					<td>
+						<p class="cell">0</p>
+					</td>
+					<td>
+						<p class="cell">0</p>
+					</td>
+					<td>
+						<p class="cell">0</p>
+					</td>
+				</tr>
+			</table>
+			<div id="info">
+				<p>Todo: <span id="numEmptyCells">36</span></p>
+			</div>
 		</div>
 		<div id="menu" class="side rotated">
 			<h1>Takuzu!</h1>
@@ -46,11 +187,28 @@
 				</div>
 				<p class="ttl g">Game</p>
 			</div>
-			<p>Here I will put the Settings.</p>
+			<div id="level" class="sublevel">
+				<h2>Level</h2>
+				<p>Here I will put the level sel.</p>
+			</div>
+			<div id="stats" class="sublevel">
+				<h2>Stats</h2>
+				<p>Easy <span id="easyStat" class="stat">100</span>%, Nrml <span id="nrmlStat" class="stat">100</span>%, Hrd <span id="hrdStat" class="stat">100</span>%</p>
+				<p>Total <span id="ttlStat" class="stat">100</span>%</p>
+			</div>
+			<div id="settings" class="sublevel">
+				<h2>Settings</h2>
+				<p>Here the music settings.</p>
+			</div>
 		</div>
 	</div>
+	<div id="toSmall">
+		<p>Display is too small.</p>
+		<p>Please pick a bigger screen.</p>
+		<p>(Min: 320 x 490)</p>
+	</div>
 	<footer>
-		<p>Yeap that's a footer</p>
+		<p>Made by Dwight VdV - <a id="github" href="https://www.github.com/Dwight-Fr34k.html">my github</a></p>
 	</footer>
 	<script src="js/jQuery.js"></script>
 	<script src="js/scripts.js"></script>
