@@ -27,6 +27,7 @@ h1 {
 }
 
 .cell {
+	font-size: 40px;
 	font-family: 'Permanent Marker', cursive;
 }
 
@@ -360,6 +361,18 @@ table td {
 	margin-bottom: 20px;
 }
 
+.editable p {
+	color: #0f138e;
+}
+
+.error p {
+	color: #d30808;
+}
+
+.nonEditable p {
+	color: #1c1c1c;
+}
+
 #victory p {
 	font-size: 20px;
 	font-weight: bold;
@@ -448,6 +461,9 @@ only screen and (max-width: 390px) {
 	#card {
 		max-height: 455px;
 	}
+	.cell {
+		font-size: 30px;
+	}
 }
 
 @media only screen and (max-height: 520px),
@@ -458,6 +474,9 @@ only screen and (max-width: 350px) {
 
 	#card {
 		max-height: 430px;
+	}
+	.cell {
+		font-size: 25px;
 	}
 }
 

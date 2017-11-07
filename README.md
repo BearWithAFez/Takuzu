@@ -17,12 +17,12 @@ If you have any remarks please hit me up, this is a learning experience.
 
 ## Errors and todo ##
 
-Last done: CSS and HTML Content!
+Last done: Added the Game functionality
 
 Todo:
 
-* Add the game.
 * Enable the game completion screen.
+* Enable the JSON reader and game builder.
 * Enable the level selector.
 * Enable random level selector.
 * Enable Stats.
