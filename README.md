@@ -17,7 +17,10 @@ If you have any remarks please hit me up, this is a learning experience.
 
 ## Errors and todo ##
 
-Last done: Added the Game functionality
+Last done: 
+
+* Added the Game functionality
+* Added the background images
 
 Todo:
 
