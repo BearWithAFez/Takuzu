@@ -10,6 +10,24 @@
 	$(window).on('load', function() {
 		// Houston we have lift-off
 		console.log('Script <scripts.js> loaded.');
+		$('body').delay(300).fadeToggle();
+		$('#selDiff').selectmenu();
+		$('#spnrLvl').spinner({
+			min: 1,
+			max: 100,
+			step: 1
+		}).val(1);
+		$('.btnRndm').button({
+			icon: "ui-icon-shuffle",
+			iconPosition: "end"
+		});
+		$('.btnPlay').button({
+			icon: "ui-icon-play",
+			iconPosition: "end"
+		});
+		$('[type="checkbox"]').checkboxradio();
+
+
 
 		// Variables
 		var currentSide;
@@ -32,6 +50,11 @@
 		var toggleBacklayer = function(destination) {
 			$sides.toggle(false);
 			currentSide.toggle(true);
+
+			setTimeout(function() {
+				$sides.toggle(false);
+				currentSide.toggle(true);
+			}, 1000);
 
 			if (destination === 'M') {
 				$menuSide.toggle(true);

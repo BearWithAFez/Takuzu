@@ -17,9 +17,12 @@ If you have any remarks please hit me up, this is a learning experience.
 
 ## Errors and todo ##
 
-* Add content.
+Last done: CSS and HTML Content!
+
+Todo:
+
 * Add the game.
-* Add a game completion screen.
+* Enable the game completion screen.
 * Enable the level selector.
 * Enable random level selector.
 * Enable Stats.

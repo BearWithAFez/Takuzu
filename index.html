@@ -6,8 +6,9 @@
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<link rel="stylesheet" href="css/styles.css" />
-	<link href="https://fonts.googleapis.com/css?family=Permanent+Marker|Roboto:300" rel="stylesheet">
+	<link rel="stylesheet" href="vendor/jquery-ui.css">
 	<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+	<link href="https://fonts.googleapis.com/css?family=Permanent+Marker|Roboto:300" rel="stylesheet">
 </head>
 
 <body>
@@ -39,144 +40,152 @@
 			</div>
 		</div>
 		<div id="game" class="side">
-			<h1>Takuzu!</h1>
-			<div id="buttonPlacer" class="round-button TL">
-				<div class="round-button-circle">
-					<p class="round-button flipL">M</p>
+			<div class="thegamecard">
+				<h1>Takuzu!</h1>
+				<div id="buttonPlacer" class="round-button TL">
+					<div class="round-button-circle">
+						<p class="round-button flipL">M</p>
+					</div>
+					<p class="ttl m">Menu</p>
 				</div>
-				<p class="ttl m">Menu</p>
-			</div>
-			<div id="buttonPlacer" class="round-button TR">
-				<div class="round-button-circle">
-					<p class="round-button flipR">H</p>
+				<div id="buttonPlacer" class="round-button TR">
+					<div class="round-button-circle">
+						<p class="round-button flipR">H</p>
+					</div>
+					<p class="ttl h">Help</p>
 				</div>
-				<p class="ttl h">Help</p>
+				<p class="ib"><span id="dif">Easy</span> - <span id="lvl">01</span></p>
+				<table>
+					<tr class="row">
+						<td>
+							<p class="cell">0</p>
+						</td>
+						<td>
+							<p class="cell">0</p>
+						</td>
+						<td>
+							<p class="cell">0</p>
+						</td>
+						<td>
+							<p class="cell">0</p>
+						</td>
+						<td>
+							<p class="cell">0</p>
+						</td>
+						<td>
+							<p class="cell">0</p>
+						</td>
+					</tr>
+					<tr class="row">
+						<td>
+							<p class="cell">0</p>
+						</td>
+						<td>
+							<p class="cell">0</p>
+						</td>
+						<td>
+							<p class="cell">0</p>
+						</td>
+						<td>
+							<p class="cell">0</p>
+						</td>
+						<td>
+							<p class="cell">0</p>
+						</td>
+						<td>
+							<p class="cell">0</p>
+						</td>
+					</tr>
+					<tr class="row">
+						<td>
+							<p class="cell">0</p>
+						</td>
+						<td>
+							<p class="cell">0</p>
+						</td>
+						<td>
+							<p class="cell">0</p>
+						</td>
+						<td>
+							<p class="cell">0</p>
+						</td>
+						<td>
+							<p class="cell">0</p>
+						</td>
+						<td>
+							<p class="cell">0</p>
+						</td>
+					</tr>
+					<tr class="row">
+						<td>
+							<p class="cell">0</p>
+						</td>
+						<td>
+							<p class="cell">0</p>
+						</td>
+						<td>
+							<p class="cell">0</p>
+						</td>
+						<td>
+							<p class="cell">0</p>
+						</td>
+						<td>
+							<p class="cell">0</p>
+						</td>
+						<td>
+							<p class="cell">0</p>
+						</td>
+					</tr>
+					<tr class="row">
+						<td>
+							<p class="cell">0</p>
+						</td>
+						<td>
+							<p class="cell">0</p>
+						</td>
+						<td>
+							<p class="cell">0</p>
+						</td>
+						<td>
+							<p class="cell">0</p>
+						</td>
+						<td>
+							<p class="cell">0</p>
+						</td>
+						<td>
+							<p class="cell">0</p>
+						</td>
+					</tr>
+					<tr class="row">
+						<td>
+							<p class="cell">0</p>
+						</td>
+						<td>
+							<p class="cell">0</p>
+						</td>
+						<td>
+							<p class="cell">0</p>
+						</td>
+						<td>
+							<p class="cell">0</p>
+						</td>
+						<td>
+							<p class="cell">0</p>
+						</td>
+						<td>
+							<p class="cell">0</p>
+						</td>
+					</tr>
+				</table>
+				<div id="info">
+					<p>Todo: <span id="numEmptyCells">36</span></p>
+				</div>
 			</div>
-			<p class="ib"><span id="dif">Easy</span> - <span id="lvl">01</span></p>
-			<table>
-				<tr class="row">
-					<td>
-						<p class="cell">0</p>
-					</td>
-					<td>
-						<p class="cell">0</p>
-					</td>
-					<td>
-						<p class="cell">0</p>
-					</td>
-					<td>
-						<p class="cell">0</p>
-					</td>
-					<td>
-						<p class="cell">0</p>
-					</td>
-					<td>
-						<p class="cell">0</p>
-					</td>
-				</tr>
-				<tr class="row">
-					<td>
-						<p class="cell">0</p>
-					</td>
-					<td>
-						<p class="cell">0</p>
-					</td>
-					<td>
-						<p class="cell">0</p>
-					</td>
-					<td>
-						<p class="cell">0</p>
-					</td>
-					<td>
-						<p class="cell">0</p>
-					</td>
-					<td>
-						<p class="cell">0</p>
-					</td>
-				</tr>
-				<tr class="row">
-					<td>
-						<p class="cell">0</p>
-					</td>
-					<td>
-						<p class="cell">0</p>
-					</td>
-					<td>
-						<p class="cell">0</p>
-					</td>
-					<td>
-						<p class="cell">0</p>
-					</td>
-					<td>
-						<p class="cell">0</p>
-					</td>
-					<td>
-						<p class="cell">0</p>
-					</td>
-				</tr>
-				<tr class="row">
-					<td>
-						<p class="cell">0</p>
-					</td>
-					<td>
-						<p class="cell">0</p>
-					</td>
-					<td>
-						<p class="cell">0</p>
-					</td>
-					<td>
-						<p class="cell">0</p>
-					</td>
-					<td>
-						<p class="cell">0</p>
-					</td>
-					<td>
-						<p class="cell">0</p>
-					</td>
-				</tr>
-				<tr class="row">
-					<td>
-						<p class="cell">0</p>
-					</td>
-					<td>
-						<p class="cell">0</p>
-					</td>
-					<td>
-						<p class="cell">0</p>
-					</td>
-					<td>
-						<p class="cell">0</p>
-					</td>
-					<td>
-						<p class="cell">0</p>
-					</td>
-					<td>
-						<p class="cell">0</p>
-					</td>
-				</tr>
-				<tr class="row">
-					<td>
-						<p class="cell">0</p>
-					</td>
-					<td>
-						<p class="cell">0</p>
-					</td>
-					<td>
-						<p class="cell">0</p>
-					</td>
-					<td>
-						<p class="cell">0</p>
-					</td>
-					<td>
-						<p class="cell">0</p>
-					</td>
-					<td>
-						<p class="cell">0</p>
-					</td>
-				</tr>
-			</table>
-			<div id="info">
-				<p>Todo: <span id="numEmptyCells">36</span></p>
+			<div id="victory">
+				<div>
+					<p id="title">Good job!</p>
+					<p><span class="diff"></span> - <span class="lvl"></span>: Complete!</p>
+				</div>
 			</div>
 		</div>
 		<div id="menu" class="side rotated">
@@ -189,7 +198,18 @@
 			</div>
 			<div id="level" class="sublevel">
 				<h2>Level</h2>
-				<p>Here I will put the level sel.</p>
+				<div>
+					<fieldset>
+						<select id="selDiff">
+							<option selected="selected">Easy</option>
+							<option>Nrml</option>
+							<option>Hrd</option>
+						</select>
+						<input id="spnrLvl">
+						<button class="btnPlay">Go</button>
+						<button class="btnRndm">Rnd</button>
+					</fieldset>
+				</div>
 			</div>
 			<div id="stats" class="sublevel">
 				<h2>Stats</h2>
@@ -198,7 +218,13 @@
 			</div>
 			<div id="settings" class="sublevel">
 				<h2>Settings</h2>
-				<p>Here the music settings.</p>
+				<fieldset>
+					<legend>Sound settings</legend>
+					<label for="chbxM">Music</label>
+					<input type="checkbox" name="chbxM" id="chbxM">
+					<label for="chbxV">VFX</label>
+					<input type="checkbox" name="chbxV" id="chbxV">
+				</fieldset>
 			</div>
 		</div>
 	</div>
@@ -210,7 +236,8 @@
 	<footer>
 		<p>Made by Dwight VdV - <a id="github" href="https://www.github.com/Dwight-Fr34k.html">my github</a></p>
 	</footer>
-	<script src="js/jQuery.js"></script>
+	<script src="vendor/jQuery.js"></script>
+	<script src="vendor/jquery-ui.js"></script>
 	<script src="js/scripts.js"></script>
 </body>
 

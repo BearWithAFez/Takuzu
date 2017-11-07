@@ -68,6 +68,7 @@ body {
 	right: 0;
 	bottom: 0;
 	left: 0;
+	display: none;
 
 	margin: 20px;
 
@@ -285,12 +286,65 @@ table td {
 	margin-bottom: 30px;
 }
 
+#victory {
+	position: absolute;
+	top: 5%;
+	left: 5%;
+	width: 90%;
+	height: 90%;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-o-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	border: 2px solid #8b743d;
+	border-radius: 20px;
+	background: white;
+	text-align: center;
+	display: none;
+}
+
+.blurred {
+	-webkit-filter: blur(5px);
+	-moz-filter: blur(5px);
+	-o-filter: blur(5px);
+	-ms-filter: blur(5px);
+	filter: blur(5px);
+	pointer-events: none;
+}
+
+#victory div {
+	position: absolute;
+	top: 50%;
+	left: 0;
+	right: 0;
+	transform: translate(0, -50%);
+}
+
+#victory #title {
+	font-family: 'Permanent Marker', cursive;
+	font-size: 40px;
+	line-height: 40px;
+	margin-bottom: 20px;
+}
+
+#victory p {
+	font-size: 20px;
+	line-height: 20px;
+	font-weight: bold;
+}
+
 #info {
 	margin-top: 10px;
 	padding: 5px;
 	text-align: center;
 	background-color: grey;
 	display: inline-block;
+}
+
+fieldset {
+	display: inline-block;
+	padding: 2px;
+	margin-bottom: 10px;
 }
 
 .ib {
