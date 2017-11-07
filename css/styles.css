@@ -15,9 +15,10 @@ h1 {
 	font-family: 'Permanent Marker', cursive;
 	font-size: 40px;
 	line-height: 40px;
-	height: 10%;
 
 	display: inline-block;
+
+	height: 10%;
 	margin: 0 auto;
 	padding: 5px;
 
@@ -25,10 +26,15 @@ h1 {
 	cursor: hand;
 }
 
+.cell {
+	font-family: 'Permanent Marker', cursive;
+}
+
 h2 {
 	font-family: 'Permanent Marker', cursive;
 	font-size: 25px;
 	line-height: 25px;
+
 	margin-bottom: 15px;
 }
 
@@ -43,8 +49,10 @@ a {
 
 ol,
 ul {
-	list-style-position: inside;
 	margin: 0 10px;
+
+	list-style-position: inside;
+
 	text-align: left;
 }
 
@@ -54,24 +62,27 @@ li {
 
 hr {
 	margin: 0 10px;
-	border-top: 2px dashed rgba(0, 0, 0, 0.2);
+
+	border-top: 2px dashed rgba(0, 0, 0, .2);
 }
 
 body {
 	font-size: 18px;
-	-webkit-user-select: none;
-	-moz-user-select: none;
-	-ms-user-select: none;
-	user-select: none;
+
 	position: absolute;
 	top: 0;
 	right: 0;
 	bottom: 0;
 	left: 0;
+
 	display: none;
 
 	margin: 20px;
 
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
 	text-align: center;
 
 	background-color: #e1d9c0;
@@ -89,14 +100,12 @@ body {
 	bottom: 5%;
 	left: 0;
 
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
 	max-width: 500px;
 	max-height: 600px;
 	margin: 0 auto;
-
-	box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	-o-box-sizing: border-box;
-	-webkit-box-sizing: border-box;
 
 	-webkit-transition: -webkit-transform 1100ms;
 	-moz-transition: -moz-transform 1100ms;
@@ -106,6 +115,7 @@ body {
 	border: 2px solid #8b743d;
 	background: white;
 
+	-o-box-sizing: border-box;
 	-webkit-transform-style: preserve-3d;
 	-moz-transform-style: preserve-3d;
 	-o-transform-style: preserve-3d;
@@ -113,10 +123,10 @@ body {
 }
 
 #github {
-	text-decoration: underline;
 	-webkit-transition: color 200ms ease;
 	-ms-transition: color 200ms ease;
 	transition: color 200ms ease;
+	text-decoration: underline;
 }
 
 #github:hover {
@@ -153,11 +163,12 @@ body {
 }
 
 .rotated {
+	z-index: 2;
+
 	-webkit-transform: rotateY( 180deg);
 	-moz-transform: rotateY( 180deg);
 	-o-transform: rotateY( 180deg);
 	transform: rotateY( 180deg);
-	z-index: 2;
 }
 
 footer {
@@ -179,9 +190,11 @@ footer {
 }
 
 .content {
-	height: 85%;
-	overflow: hidden;
 	position: relative;
+
+	overflow: hidden;
+
+	height: 85%;
 }
 
 .TR {
@@ -252,34 +265,44 @@ footer {
 }
 
 table {
-	background: orange url("../data/Doge.png") no-repeat;
-	background-size: cover;
 	width: 420px;
 	margin: 10px auto 0;
+
+	background: url('../data/takuzuBG.png') no-repeat;
+	background-size: cover;
 }
 
 table td {
+	position: relative;
+
+	overflow: hidden;
+
 	width: 16.66%;
 	padding-top: 16.66%;
-	overflow: hidden;
-	position: relative;
+
+	cursor: pointer;
+	cursor: hand;
 }
 
 .cell {
-	margin: 0;
 	position: absolute;
 	top: 50%;
 	left: 50%;
+
+	margin: 0;
+
 	transform: translate(-50%, -50%);
 }
 
 .centerV {
-	margin: 0;
 	position: absolute;
 	top: 50%;
 	left: 0;
-	transform: translate(0, -50%);
+
 	width: 100%;
+	margin: 0;
+
+	transform: translate(0, -50%);
 }
 
 #rules {
@@ -290,35 +313,42 @@ table td {
 	position: absolute;
 	top: 5%;
 	left: 5%;
+
+	display: none;
+
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
 	width: 90%;
 	height: 90%;
-	box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	-o-box-sizing: border-box;
-	-webkit-box-sizing: border-box;
+
+	cursor: pointer;
+	cursor: hand;
+	text-align: center;
+
 	border: 2px solid #8b743d;
 	border-radius: 20px;
 	background: white;
-	text-align: center;
-	display: none;
-	cursor: pointer;
-	cursor: hand;
+
+	-o-box-sizing: border-box;
 }
 
 .blurred {
+	pointer-events: none;
+
 	-webkit-filter: blur(5px);
 	-moz-filter: blur(5px);
 	-o-filter: blur(5px);
 	-ms-filter: blur(5px);
 	filter: blur(5px);
-	pointer-events: none;
 }
 
 #victory div {
 	position: absolute;
 	top: 50%;
-	left: 0;
 	right: 0;
+	left: 0;
+
 	transform: translate(0, -50%);
 }
 
@@ -326,46 +356,61 @@ table td {
 	font-family: 'Permanent Marker', cursive;
 	font-size: 40px;
 	line-height: 40px;
+
 	margin-bottom: 20px;
 }
 
 #victory p {
 	font-size: 20px;
-	line-height: 20px;
 	font-weight: bold;
+	line-height: 20px;
 }
 
 #info {
-	margin-top: 10px;
-	padding: 5px;
-	text-align: center;
-	background-color: grey;
 	display: inline-block;
+
+	margin-top: 10px;
+	padding: 5px 35px;
+
+	text-align: center;
+
+	color: white;
+	background: url('../data/swipe1.png') no-repeat;
+	background-size: 100% 100%;
 }
 
 fieldset {
 	display: inline-block;
-	padding: 2px;
+
 	margin-bottom: 10px;
+	padding: 2px;
+
+	border-color: rgba(0, 0, 0, .12);
 }
 
 .ib {
 	display: table;
-	background-color: grey;
-	margin: 0 auto;
 
-	padding: 5px;
+	margin: 0 auto;
+	padding: 5px 35px;
+
+	color: white;
+	background: url('../data/swipe2.png') no-repeat;
+	background-size: 100% 100%;
 }
 
 #toSmall {
 	display: none;
-	box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	-o-box-sizing: border-box;
+
 	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	padding: 5px;
+
 	border: 2px solid #8b743d;
 	background: white;
-	padding: 5px;
+
+	-o-box-sizing: border-box;
 }
 
 .sublevel {
