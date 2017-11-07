@@ -301,6 +301,8 @@ table td {
 	background: white;
 	text-align: center;
 	display: none;
+	cursor: pointer;
+	cursor: hand;
 }
 
 .blurred {
