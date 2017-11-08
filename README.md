@@ -20,11 +20,10 @@ If you have any remarks please hit me up, this is a learning experience.
 Last done: 
 
 * Added the Game functionality
-* Added the background images
+* Added the game completion screen.
 
 Todo:
 
-* Enable the game completion screen.
 * Enable the JSON reader and game builder.
 * Enable the level selector.
 * Enable random level selector.

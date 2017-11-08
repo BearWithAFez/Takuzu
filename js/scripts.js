@@ -26,6 +26,8 @@
 		var $cellTexts = $('td p');
 		var $todo = $('#numEmptyCells');
 		var $rows = $('tr');
+		var $gCard = $('.thegamecard');
+		var $victory = $('#victory');
 
 		// jQuery UI tagging
 		$('#selDiff').selectmenu();
@@ -72,6 +74,15 @@
 				currentSide = $helpSide;
 			}
 		};
+
+		var nextPuzzle = function() {
+			console.log('NEXT PUZZLE');
+		};
+
+		var toggleVictory = function() {
+			$gCard.toggleClass('blurred');
+			$victory.toggle('puff');
+		}
 
 		var flipLeft = function() {
 			if ($card.hasClass('flipR')) {
@@ -160,6 +171,30 @@
 				if (verStrkOne === $rows.length / 2 || verStrkZero === $rows.length / 2) ver_status[parseInt(i / $rows.length)] = true;
 			}
 
+			// duplicate entries
+			var rowVals = [];
+			var colVals = [];
+
+			for (var i = 0; i < $rows.length; i++) {
+				var row = '';
+				var col = '';
+
+				for (var j = 0; j < $rows.length; j++) {
+					row += $cells.eq((i * $rows.length) + j).children('p').html();
+					col += $cells.eq((j * $rows.length) + i).children('p').html();
+				}
+
+				rowVals[i] = (row.length === $rows.length) ? row : 'invalid';
+				colVals[i] = (col.length === $rows.length) ? col : 'invalid';
+			}
+
+			for (var i = 0; i < $rows.length; i++) {
+				for (var j = i + 1; j < $rows.length; j++) {
+					if (rowVals[i] === rowVals[j] && rowVals[i] !== 'invalid') hor_status[i] = hor_status[j] = 'duplicate';
+					if (colVals[i] === colVals[j] && colVals[i] !== 'invalid') ver_status[i] = ver_status[j] = 'duplicate';
+				}
+			}
+
 			// setting invalid (horizontal)
 			for (var i = 0; i < hor_status.length; i++) {
 				// Undefined entry ==> skip!
@@ -178,14 +213,20 @@
 
 			// Endgame?
 			if ((errs === 0) && ($todo.html() === '0')) {
-				console.log('success');
+				toggleVictory();
 			}
 		};
+		checkit();
 
 		// **** EVENTS ****
 		// Refresh this page!
 		$title.on('click', function(e) {
 			location.reload();
+		});
+
+		// Puzzle Complete
+		$victory.on('click', function(e) {
+			toggleVictory();
 		});
 
 		// Flip buttons
