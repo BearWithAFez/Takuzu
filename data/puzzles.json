@@ -1,0 +1,63 @@
+{
+	"Easy": [
+	{
+		"code": "1ee0eeee00e1e00ee1eeeeee00e1eee1ee00"
+	},
+	{
+		"code": "ee0ee11e00eee1eeeeeeee1eee1ee000e1ee"
+	},
+	{
+		"code": "e0eeee1ee00eeeee0e0ee1eeee0eeee1eee0"
+	},
+	{
+		"code": "1e11e0e0eeee1ee0e01eee10e1e1ee0e0e11"
+	},
+	{
+		"code": "00ee110eeee1e0e0ee1e00e0eeeeee11ee00"
+	},
+	{
+		"code": "0ee0e100ee11ee1eee1eeee0eee1ee11ee00"
+	},
+	{
+		"code": "1e00eee00ee1eeeeeee0eee00ee11e0e11ee"
+	},
+	{
+		"code": "11ee00e1ee0eee0eee0eeee100ee11ee1e1e"
+	},
+	{
+		"code": "e0eee11e1eeeee1e0e0eeeeeeee11ee1eee0"
+	},
+	{
+		"code": "1e00e0e11eeeeeee1e0eeee100ee11ee11ee"
+	}],
+	"Normal": [
+	{
+		"code": "eeee00eeeeeee1eeee01e1ee0eee0eee1eee"
+	},
+	{
+		"code": "e0eeee00eeeeeee0eeeeeeee1e11ee1ee1ee"
+	},
+	{
+		"code": "ee00eee1eeee0eeeeeeeeee00ee0e0eeeeee"
+	}],
+	"Hard": [
+	{
+		"code": "eee1eeee0ee10eee0ee11eeeeeeeee1eee0e"
+	},
+	{
+		"code": "e11ee100eeeeeeeeeeee1ee0eeeeeeeee0ee"
+	},
+	{
+		"code": "1e0ee0eeeeeee11eeee1ee1eeeeee0ee01ee"
+	}],
+	"VHard": [
+	{
+		"code": "eeee00eeeeeee1eeee01e1ee0eee0eee1eee"
+	},
+	{
+		"code": "e0eeee00eeeeeee0eeeeeeee1e11ee1ee1ee"
+	},
+	{
+		"code": "ee00eee1eeee0eeeeeeeeee00ee0e0eeeeee"
+	}]
+}

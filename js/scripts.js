@@ -13,6 +13,8 @@
 
 		// Variables
 		var currentSide;
+		var puzzles;
+		var progress;
 
 		// Shortcuts
 		var $btnsFlip = $('.round-button div p');
@@ -217,6 +219,109 @@
 			}
 		};
 		checkit();
+
+		var readData = function() {
+			$.ajax({
+				dataType: 'json',
+				url: './data/puzzles.json',
+				type: 'get',
+				success: function(data, textStatus, jqXHR) {
+					console.log("Successfully loaded the puzzles!")
+					puzzles = {
+						Easy: [],
+						Normal: [],
+						Hard: [],
+						VHard: []
+					};
+					progress = {
+						Easy: [],
+						Normal: [],
+						Hard: [],
+						VHard: []
+					};
+					for (var i = 0; i < data.Easy.length; i++) {
+						progress.Easy[i] = false;
+						puzzles.Easy[i] = data.Easy[i].code;
+					}
+					for (var i = 0; i < data.Normal.length; i++) {
+						progress.Normal[i] = false;
+						puzzles.Normal[i] = data.Normal[i].code;
+					}
+					for (var i = 0; i < data.Hard.length; i++) {
+						progress.Hard[i] = false;
+						puzzles.Hard[i] = data.Hard[i].code;
+					}
+					for (var i = 0; i < data.VHard.length; i++) {
+						progress.VHard[i] = false;
+						puzzles.VHard[i] = data.VHard[i].code;
+					}
+
+					if (localStorage.getItem('completionRate') !== 'undefined') {
+						console.log('loaded the localStorage');
+						var ls = localStorage.getItem('completionRate');
+						if ((ls.Easy.length === progress.Easy.length) &&
+							(ls.Normal.length === progress.Normal.length) &&
+							(ls.Hard.length === progress.Hard.length) &&
+							(ls.VHard.length === progress.VHard.length)) progress = ls;
+						else {
+							if (ls.Easy.length !== progress.Easy.length) {
+								if (ls.Easy.length > progress.Easy.length) {
+									console.log('Puzzles removed from EASY?');
+								} else {
+									var diff = progress.Easy.length;
+									progress.Easy = ls.Easy;
+									for (var i = progress.Easy.length; i < diff; i++) {
+										progress.Easy[i] = false;
+									}
+								}
+							}
+							if (ls.Normal.length !== progress.Normal.length) {
+								if (ls.Normal.length > progress.Normal.length) {
+									console.log('Puzzles removed from EASY?');
+								} else {
+									var diff = progress.Normal.length;
+									progress.Normal = ls.Normal;
+									for (var i = progress.Normal.length; i < diff; i++) {
+										progress.Normal[i] = false;
+									}
+								}
+							}
+							if (ls.Hard.length !== progress.Hard.length) {
+								if (ls.Hard.length > progress.Hard.length) {
+									console.log('Puzzles removed from EASY?');
+								} else {
+									var diff = progress.Hard.length;
+									progress.Hard = ls.Hard;
+									for (var i = progress.Hard.length; i < diff; i++) {
+										progress.Hard[i] = false;
+									}
+								}
+							}
+							if (ls.VHard.length !== progress.VHard.length) {
+								if (ls.VHard.length > progress.VHard.length) {
+									console.log('Puzzles removed from EASY?');
+								} else {
+									var diff = progress.VHard.length;
+									progress.VHard = ls.VHard;
+									for (var i = progress.VHard.length; i < diff; i++) {
+										progress.VHard[i] = false;
+									}
+								}
+							}
+						}
+					}
+				},
+				error: function(jqXHR, textStatus, errorThrown) {
+					console.log(errorThrown);
+				}
+			});
+		};
+		readData();
+
+		var saveProgress = function() {
+			localStorage.setItem('completionRate', progress);
+		}
+		saveProgress();
 
 		// **** EVENTS ****
 		// Refresh this page!

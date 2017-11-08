@@ -202,8 +202,9 @@
 					<fieldset>
 						<select id="selDiff">
 							<option selected="selected">Easy</option>
-							<option>Nrml</option>
-							<option>Hrd</option>
+							<option>Normal</option>
+							<option>Hard</option>
+							<option>v.Hard</option>
 						</select>
 						<input id="spnrLvl">
 						<button class="btnPlay">Go</button>
@@ -213,8 +214,15 @@
 			</div>
 			<div id="stats" class="sublevel">
 				<h2>Stats</h2>
-				<p>Easy <span id="easyStat" class="stat">100</span>%, Nrml <span id="nrmlStat" class="stat">100</span>%, Hrd <span id="hrdStat" class="stat">100</span>%</p>
-				<p>Total <span id="ttlStat" class="stat">100</span>%</p>
+				<div class="statsLine">
+					<p>Easy <span id="easyStat" class="stat">100</span>%, Normal <span id="nrmlStat" class="stat">100</span>%,</p>
+				</div>
+				<div class="statsLine">
+					<p>Hard <span id="hrdStat" class="stat">100</span>%, V. Hard <span id="hrdStat" class="stat">100</span>%</p>
+				</div>
+				<div class="statsLine bold">
+					<p>Total <span id="ttlStat" class="stat">100</span>%</p>
+				</div>
 			</div>
 			<div id="settings" class="sublevel">
 				<h2>Settings</h2>
