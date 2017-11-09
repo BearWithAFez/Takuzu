@@ -1,63 +1,166 @@
 {
 	"Easy": [
 	{
+		"id": 1,
 		"code": "1ee0eeee00e1e00ee1eeeeee00e1eee1ee00"
 	},
 	{
+		"id": 2,
 		"code": "ee0ee11e00eee1eeeeeeee1eee1ee000e1ee"
 	},
 	{
+		"id": 3,
 		"code": "e0eeee1ee00eeeee0e0ee1eeee0eeee1eee0"
 	},
 	{
+		"id": 4,
 		"code": "1e11e0e0eeee1ee0e01eee10e1e1ee0e0e11"
 	},
 	{
+		"id": 5,
 		"code": "00ee110eeee1e0e0ee1e00e0eeeeee11ee00"
 	},
 	{
+		"id": 6,
 		"code": "0ee0e100ee11ee1eee1eeee0eee1ee11ee00"
 	},
 	{
+		"id": 7,
 		"code": "1e00eee00ee1eeeeeee0eee00ee11e0e11ee"
 	},
 	{
+		"id": 8,
 		"code": "11ee00e1ee0eee0eee0eeee100ee11ee1e1e"
 	},
 	{
+		"id": 9,
 		"code": "e0eee11e1eeeee1e0e0eeeeeeee11ee1eee0"
 	},
 	{
+		"id": 10,
 		"code": "1e00e0e11eeeeeee1e0eeee100ee11ee11ee"
 	}],
 	"Normal": [
 	{
+		"id": 1,
 		"code": "eeee00eeeeeee1eeee01e1ee0eee0eee1eee"
 	},
 	{
+		"id": 2,
 		"code": "e0eeee00eeeeeee0eeeeeeee1e11ee1ee1ee"
 	},
 	{
+		"id": 3,
 		"code": "ee00eee1eeee0eeeeeeeeee00ee0e0eeeeee"
+	},
+	{
+		"id": 4,
+		"code": "e1ee0e0eeee0eee10ee00eeeeeee0e1e1eee"
+	},
+	{
+		"id": 5,
+		"code": "e0e00eee1ee1e0eeeeeeeeee0e00eeeeeeee"
+	},
+	{
+		"id": 6,
+		"code": "10e0eeee1eeeeeeeeeeee00eeee0eeeeeee1"
+	},
+	{
+		"id": 7,
+		"code": "eeeeeeeee0ee0ee00e0eeeeeee0eee0e0eee"
+	},
+	{
+		"id": 8,
+		"code": "e0eee1eeeeee0ee1eee00ee100eeeeeeeeee"
+	},
+	{
+		"id": 9,
+		"code": "eee0eeeee00eeeeeeeee0ee1eeee11ee1eee"
+	},
+	{
+		"id": 10,
+		"code": "e0ee1eeee0e010eeee00eeeeeeee1eee1eee"
 	}],
 	"Hard": [
 	{
+		"id": 1,
 		"code": "eee1eeee0ee10eee0ee11eeeeeeeee1eee0e"
 	},
 	{
+		"id": 2,
 		"code": "e11ee100eeeeeeeeeeee1ee0eeeeeeeee0ee"
 	},
 	{
+		"id": 3,
 		"code": "1e0ee0eeeeeee11eeee1ee1eeeeee0ee01ee"
+	},
+	{
+		"id": 4,
+		"code": "ee11e1ee1eeeeeeee1eee1eeeeeeee0eeee0"
+	},
+	{
+		"id": 5,
+		"code": "11e0eee1ee0eeeeee0eeeeeee0ee1eee0eee"
+	},
+	{
+		"id": 6,
+		"code": "0e0ee0e1ee1eeeeeeeee0e0eeeeeee0eeeee"
+	},
+	{
+		"id": 7,
+		"code": "eeee00e1ee0eeeeeeeeeeee11e1eeeeee1ee"
+	},
+	{
+		"id": 8,
+		"code": "0eeeee0e00eee1eeeeeeeeee0eeee0eeee0e"
+	},
+	{
+		"id": 9,
+		"code": "ee1ee0eeeeeeee0e0eee00ee0ee00eeeeeee"
+	},
+	{
+		"id": 10,
+		"code": "ee0eee1e0e0eeeeeeee1e0ee01ee0e1eeee1"
 	}],
 	"VHard": [
 	{
+		"id": 1,
 		"code": "eeee00eeeeeee1eeee01e1ee0eee0eee1eee"
 	},
 	{
+		"id": 2,
 		"code": "e0eeee00eeeeeee0eeeeeeee1e11ee1ee1ee"
 	},
 	{
+		"id": 3,
 		"code": "ee00eee1eeee0eeeeeeeeee00ee0e0eeeeee"
+	},
+	{
+		"id": 4,
+		"code": "eeeee00eeeeeeeee1ee1e0eeee00eeeeeee0"
+	},
+	{
+		"id": 5,
+		"code": "11eeeeeeeeeeeeeee1e0e0eeeeeee1e11eee"
+	},
+	{
+		"id": 6,
+		"code": "eeee111eeeeeeee11eeeeee01e1eeeeeeeee"
+	},
+	{
+		"id": 7,
+		"code": "eee0eee1ee0eee0eeee00eeeeeee0eeeeee0"
+	},
+	{
+		"id": 8,
+		"code": "0eee0e1ee0eeeeeeeee1eeeee11e0eee1eee"
+	},
+	{
+		"id": 9,
+		"code": "e1ee0e1eeeeeeee0e0e00ee0eee0eeeee0ee"
+	},
+	{
+		"id": 10,
+		"code": "ee1e00eeeeeeeeee11eeeeeeeee1eee0ee0e"
 	}]
 }

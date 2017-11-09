@@ -189,7 +189,7 @@ footer {
 	display: none;
 }
 
-#buttonPlacer {
+.buttonPlacer {
 	position: absolute;
 	top: 10px;
 }
@@ -416,7 +416,7 @@ fieldset {
 	border-color: rgba(0, 0, 0, .12);
 }
 
-.ib {
+#ib {
 	display: table;
 
 	margin: 0 auto;
@@ -439,10 +439,6 @@ fieldset {
 	background: white;
 
 	-o-box-sizing: border-box;
-}
-
-.sublevel {
-	margin-bottom: 20px;
 }
 
 @media only screen and (max-height: 675px),
@@ -493,10 +489,26 @@ only screen and (max-width: 350px) {
 	.cell {
 		font-size: 25px;
 	}
+
+	#rules {
+		margin-bottom: 0;
+	}
+
+	footer {
+		font-size: 14px;
+	}
+
+	.credit {
+		font-size: 14px;
+	}
+
+	li {
+		font-size: 13px;
+	}
 }
 
 @media only screen and (max-height: 490px),
-only screen and (max-width: 310px) {
+only screen and (max-width: 285px) {
 	#card {
 		display: none;
 	}

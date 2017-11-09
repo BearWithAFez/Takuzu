@@ -12,15 +12,19 @@
 </head>
 
 <body>
+	<!-- The Game "Card" -->
 	<div id="card">
+		<!-- The Help side. Here I explain the rules and controls. -->
 		<div id="help" class="side rotated">
 			<h1>Takuzu!</h1>
-			<div id="buttonPlacer" class="round-button TR">
+			<!-- Navigation -->
+			<div class="buttonPlacer round-button TR">
 				<div class="round-button-circle">
 					<p class="round-button flipL">G</p>
 				</div>
 				<p class="ttl g">Game</p>
 			</div>
+			<!-- Content -->
 			<div id="rules">
 				<h2>Rules:</h2>
 				<ol>
@@ -39,164 +43,174 @@
 				</ul>
 			</div>
 		</div>
+		<!-- The Game side. Here the game will be displayed. -->
 		<div id="game" class="side">
+			<!-- The face for the game -->
 			<div class="thegamecard">
 				<h1>Takuzu!</h1>
-				<div id="buttonPlacer" class="round-button TL">
+				<!-- Navigation -->
+				<div class="buttonPlacer round-button TL">
 					<div class="round-button-circle">
 						<p class="round-button flipL">M</p>
 					</div>
 					<p class="ttl m">Menu</p>
 				</div>
-				<div id="buttonPlacer" class="round-button TR">
+				<div class="buttonPlacer round-button TR">
 					<div class="round-button-circle">
 						<p class="round-button flipR">H</p>
 					</div>
 					<p class="ttl h">Help</p>
 				</div>
-				<p class="ib"><span class="diff">Easy</span> - <span class="lvl">01</span></p>
+				<!-- Info -->
+				<p id="ib"><span class="diff"></span> - <span class="lvl"></span></p>
+				<!-- The gameboard -->
 				<table>
 					<tr class="row">
-						<td class="editable">
-							<p class="cell">0</p>
+						<td>
+							<p class="cell"></p>
 						</td>
-						<td class="editable">
-							<p class="cell">0</p>
+						<td>
+							<p class="cell"></p>
 						</td>
-						<td class="editable">
-							<p class="cell">0</p>
+						<td>
+							<p class="cell"></p>
 						</td>
-						<td class="editable">
-							<p class="cell">0</p>
+						<td>
+							<p class="cell"></p>
 						</td>
-						<td class="editable">
-							<p class="cell">0</p>
+						<td>
+							<p class="cell"></p>
 						</td>
-						<td class="editable">
-							<p class="cell">0</p>
-						</td>
-					</tr>
-					<tr class="row">
-						<td class="editable">
-							<p class="cell">0</p>
-						</td>
-						<td class="editable">
-							<p class="cell">0</p>
-						</td>
-						<td class="editable">
-							<p class="cell">0</p>
-						</td>
-						<td class="editable">
-							<p class="cell">0</p>
-						</td>
-						<td class="editable">
-							<p class="cell">0</p>
-						</td>
-						<td class="editable">
-							<p class="cell">0</p>
+						<td>
+							<p class="cell"></p>
 						</td>
 					</tr>
 					<tr class="row">
-						<td class="editable">
-							<p class="cell">0</p>
+						<td>
+							<p class="cell"></p>
 						</td>
-						<td class="editable">
-							<p class="cell">0</p>
+						<td>
+							<p class="cell"></p>
 						</td>
-						<td class="editable">
-							<p class="cell">0</p>
+						<td>
+							<p class="cell"></p>
 						</td>
-						<td class="editable">
-							<p class="cell">0</p>
+						<td>
+							<p class="cell"></p>
 						</td>
-						<td class="editable">
-							<p class="cell">0</p>
+						<td>
+							<p class="cell"></p>
 						</td>
-						<td class="editable">
-							<p class="cell">0</p>
-						</td>
-					</tr>
-					<tr class="row">
-						<td class="editable">
-							<p class="cell">0</p>
-						</td>
-						<td class="editable">
-							<p class="cell">0</p>
-						</td>
-						<td class="editable">
-							<p class="cell">0</p>
-						</td>
-						<td class="editable">
-							<p class="cell">0</p>
-						</td>
-						<td class="editable">
-							<p class="cell">0</p>
-						</td>
-						<td class="editable">
-							<p class="cell">0</p>
+						<td>
+							<p class="cell"></p>
 						</td>
 					</tr>
 					<tr class="row">
-						<td class="editable">
-							<p class="cell">0</p>
+						<td>
+							<p class="cell"></p>
 						</td>
-						<td class="editable">
-							<p class="cell">0</p>
+						<td>
+							<p class="cell"></p>
 						</td>
-						<td class="editable">
-							<p class="cell">0</p>
+						<td>
+							<p class="cell"></p>
 						</td>
-						<td class="editable">
-							<p class="cell">0</p>
+						<td>
+							<p class="cell"></p>
 						</td>
-						<td class="editable">
-							<p class="cell">0</p>
+						<td>
+							<p class="cell"></p>
 						</td>
-						<td class="editable">
-							<p class="cell">0</p>
+						<td>
+							<p class="cell"></p>
 						</td>
 					</tr>
 					<tr class="row">
-						<td class="editable">
-							<p class="cell">0</p>
+						<td>
+							<p class="cell"></p>
 						</td>
-						<td class="editable">
-							<p class="cell">0</p>
+						<td>
+							<p class="cell"></p>
 						</td>
-						<td class="editable">
-							<p class="cell">0</p>
+						<td>
+							<p class="cell"></p>
 						</td>
-						<td class="editable">
-							<p class="cell">0</p>
+						<td>
+							<p class="cell"></p>
 						</td>
-						<td class="editable">
-							<p class="cell">0</p>
+						<td>
+							<p class="cell"></p>
 						</td>
-						<td class="editable">
-							<p class="cell">0</p>
+						<td>
+							<p class="cell"></p>
+						</td>
+					</tr>
+					<tr class="row">
+						<td>
+							<p class="cell"></p>
+						</td>
+						<td>
+							<p class="cell"></p>
+						</td>
+						<td>
+							<p class="cell"></p>
+						</td>
+						<td>
+							<p class="cell"></p>
+						</td>
+						<td>
+							<p class="cell"></p>
+						</td>
+						<td>
+							<p class="cell"></p>
+						</td>
+					</tr>
+					<tr class="row">
+						<td>
+							<p class="cell"></p>
+						</td>
+						<td>
+							<p class="cell"></p>
+						</td>
+						<td>
+							<p class="cell"></p>
+						</td>
+						<td>
+							<p class="cell"></p>
+						</td>
+						<td>
+							<p class="cell"></p>
+						</td>
+						<td>
+							<p class="cell"></p>
 						</td>
 					</tr>
 				</table>
+				<!-- Info -->
 				<div id="info">
-					<p>Todo: <span id="numEmptyCells">36</span></p>
+					<p>Todo: <span id="numEmptyCells"></span></p>
 				</div>
 			</div>
+			<!-- A overlapping Victory face -->
 			<div id="victory">
 				<div>
 					<p id="title">Good job!</p>
-					<p><span class="diff">Easy</span> - <span class="lvl">01</span>: Complete!</p>
+					<p><span class="diff"></span> - <span class="lvl"></span>: Complete!</p>
 				</div>
 			</div>
 		</div>
+		<!-- The Menu and Settings side. -->
 		<div id="menu" class="side rotated">
 			<h1>Takuzu!</h1>
-			<div id="buttonPlacer" class="round-button TR">
+			<!-- Navigation -->
+			<div class="buttonPlacer round-button TR">
 				<div class="round-button-circle">
 					<p class="round-button flipR">G</p>
 				</div>
 				<p class="ttl g">Game</p>
 			</div>
-			<div id="level" class="sublevel">
+			<!-- Subitem: LevelSelect -->
+			<div class="sublevel">
 				<h2>Level</h2>
 				<div>
 					<fieldset>
@@ -211,19 +225,21 @@
 					</fieldset>
 				</div>
 			</div>
-			<div id="stats" class="sublevel">
+			<!-- Subitem: Statistics -->
+			<div class="sublevel">
 				<h2>Stats</h2>
-				<div class="statsLine">
-					<p>Easy <span id="easyStat" class="stat">100</span>%, Normal <span id="nrmlStat" class="stat">100</span>%,</p>
+				<div>
+					<p>Easy <span id="easyStat" class="stat"></span>%, Normal <span id="nrmlStat" class="stat"></span>%,</p>
 				</div>
-				<div class="statsLine">
-					<p>Hard <span id="hrdStat" class="stat">100</span>%, V. Hard <span id="vhrdStat" class="stat">100</span>%</p>
+				<div>
+					<p>Hard <span id="hrdStat" class="stat"></span>%, V. Hard <span id="vhrdStat" class="stat"></span>%</p>
 				</div>
-				<div class="statsLine bold">
-					<p>Total <span id="ttlStat" class="stat">100</span>%</p>
+				<div class="bold">
+					<p>Total <span id="ttlStat" class="stat"></span>%</p>
 				</div>
 			</div>
-			<div id="settings" class="sublevel">
+			<!-- Subitem: Settings -->
+			<div class="sublevel">
 				<h2>Settings</h2>
 				<fieldset>
 					<legend>Sound settings</legend>
@@ -236,14 +252,16 @@
 			</div>
 		</div>
 	</div>
+	<!-- A Message when the screen is to small -->
 	<div id="toSmall">
 		<p>Display is too small.</p>
 		<p>Please pick a bigger screen.</p>
-		<p>(Min: 320 x 490)</p>
 	</div>
+	<!-- Footer -->
 	<footer>
 		<p>Made by Dwight VdV - <a id="github" href="https://www.github.com/Dwight-Fr34k.html">my github</a></p>
 	</footer>
+	<!-- Scripts -->
 	<script src="vendor/jQuery.js"></script>
 	<script src="vendor/jquery-ui.js"></script>
 	<script src="js/scripts.js"></script>

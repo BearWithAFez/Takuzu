@@ -19,12 +19,19 @@
 		var sfx = new Audio('./data/click.mp3');
 		var sfxv = new Audio('./data/victory.mp3');
 		var amb = new Audio('./data/ambient.wav');
-		var mIsPlaying = true;
-		var sfxEn = true;
+		var lclStore = {
+			mIsPlaying: true,
+			sfxEn: true,
+			progress: {
+				Easy: [],
+				Normal: [],
+				Hard: [],
+				VHard: []
+			}
+		};
 		var pandaCntr = 5;
 		var currentSide;
 		var puzzles;
-		var progress;
 		var currentPzl = {
 			dif: "",
 			lvl: 0,
@@ -54,13 +61,12 @@
 			this.currentTime = 0;
 			this.play();
 		}, false);
-		amb.play();
 
 		// jQuery UI tagging
 		$selDif.selectmenu();
 		$selDif.on('selectmenuchange', function() {
 			// SFX
-			if (sfxEn) sfx.play();
+			if (lclStore.sfxEn) sfx.play();
 
 			newDifSelMenu();
 		});
@@ -70,9 +76,25 @@
 			step: 1,
 			stop: function(event, ui) {
 				// SFX
-				if (sfxEn) sfx.play();
+				if (lclStore.sfxEn) sfx.play();
 
 				currentPzl.lvl = $spinner.spinner().val() - 1;
+
+				switch (currentPzl.dif) {
+					case 'Easy':
+						currentPzl.code = puzzles.Easy[currentPzl.lvl];
+						break;
+					case 'Normal':
+						currentPzl.code = puzzles.Normal[currentPzl.lvl];
+						break;
+					case 'Hard':
+						currentPzl.code = puzzles.Hard[currentPzl.lvl];
+						break;
+					case 'VHard':
+						currentPzl.code = puzzles.VHard[currentPzl.lvl];
+						break;
+				}
+
 				updatePuzzle();
 			}
 		}).val(1);
@@ -119,22 +141,22 @@
 			var c;
 			switch (nDif) {
 				case 'Easy':
-					m = progress.Easy.length;
+					m = lclStore.progress.Easy.length;
 					l = (currentPzl.lvl > m) ? m - 1 : currentPzl.lvl;
 					c = puzzles.Easy[l];
 					break;
 				case 'Normal':
-					m = progress.Normal.length;
+					m = lclStore.progress.Normal.length;
 					l = (currentPzl.lvl > m) ? m - 1 : currentPzl.lvl;
 					c = puzzles.Normal[l];
 					break;
 				case 'Hard':
-					m = progress.Hard.length;
+					m = lclStore.progress.Hard.length;
 					l = (currentPzl.lvl > m) ? m - 1 : currentPzl.lvl;
 					c = puzzles.Hard[l];
 					break;
 				case 'VHard':
-					m = progress.VHard.length;
+					m = lclStore.progress.VHard.length;
 					l = (currentPzl.lvl > m) ? m - 1 : currentPzl.lvl;
 					c = puzzles.VHard[l];
 					break;
@@ -164,33 +186,33 @@
 
 		var nextPuzzle = function() {
 			// Easy
-			for (var i = 0; i < progress.Easy.length; i++) {
-				if (!progress.Easy[i]) {
-					selPuzzle('Easy', i, progress.Easy.length, puzzles.Easy[i]);
+			for (var i = 0; i < lclStore.progress.Easy.length; i++) {
+				if (!lclStore.progress.Easy[i]) {
+					selPuzzle('Easy', i, lclStore.progress.Easy.length, puzzles.Easy[i]);
 					return;
 				}
 			}
 
 			// Normal
-			for (var i = 0; i < progress.Normal.length; i++) {
-				if (!progress.Normal[i]) {
-					selPuzzle('Normal', i, progress.Normal.length, puzzles.Normal[i]);
+			for (var i = 0; i < lclStore.progress.Normal.length; i++) {
+				if (!lclStore.progress.Normal[i]) {
+					selPuzzle('Normal', i, lclStore.progress.Normal.length, puzzles.Normal[i]);
 					return;
 				}
 			}
 
 			// Hard
-			for (var i = 0; i < progress.Hard.length; i++) {
-				if (!progress.Hard[i]) {
-					selPuzzle('Hard', i, progress.Hard.length, puzzles.Hard[i]);
+			for (var i = 0; i < lclStore.progress.Hard.length; i++) {
+				if (!lclStore.progress.Hard[i]) {
+					selPuzzle('Hard', i, lclStore.progress.Hard.length, puzzles.Hard[i]);
 					return;
 				}
 			}
 
 			// VHard
-			for (var i = 0; i < progress.VHard.length; i++) {
-				if (!progress.VHard[i]) {
-					selPuzzle('VHard', i, progress.VHard.length, puzzles.VHard[i]);
+			for (var i = 0; i < lclStore.progress.VHard.length; i++) {
+				if (!lclStore.progress.VHard[i]) {
+					selPuzzle('VHard', i, lclStore.progress.VHard.length, puzzles.VHard[i]);
 					return;
 				}
 			}
@@ -209,41 +231,41 @@
 			var m;
 			switch (d) {
 				case 1:
-					m = progress.Easy.length;
+					m = lclStore.progress.Easy.length;
 					break;
 				case 2:
-					m = progress.Normal.length;
+					m = lclStore.progress.Normal.length;
 					break;
 				case 3:
-					m = progress.Hard.length;
+					m = lclStore.progress.Hard.length;
 					break;
 				case 4:
-					m = progress.VHard.length;
+					m = lclStore.progress.VHard.length;
 					break;
 			}
 			while (true) {
 				var i = Math.floor(Math.random() * m);
 				switch (d) {
 					case 1:
-						if (!progress.Easy[i]) {
+						if (!lclStore.progress.Easy[i]) {
 							selPuzzle('Easy', i, m, puzzles.Easy[i]);
 							return;
 						}
 						break;
 					case 2:
-						if (!progress.Normal[i]) {
+						if (!lclStore.progress.Normal[i]) {
 							selPuzzle('Normal', i, m, puzzles.Normal[i]);
 							return;
 						}
 						break;
 					case 3:
-						if (!progress.Hard[i]) {
+						if (!lclStore.progress.Hard[i]) {
 							selPuzzle('Hard', i, m, puzzles.Hard[i]);
 							return;
 						}
 						break;
 					case 4:
-						if (!progress.VHard[i]) {
+						if (!lclStore.progress.VHard[i]) {
 							selPuzzle('VHard', i, m, puzzles.VHard[i]);
 							return;
 						}
@@ -387,25 +409,25 @@
 			// Endgame?
 			if ((errs === 0) && ($todo.html() === '0')) {
 				// SFXv
-				if (sfxEn) sfxv.play();
+				if (lclStore.sfxEn) sfxv.play();
 				toggleVictory();
 
 				switch (currentPzl.dif) {
 					case 'Easy':
-						progress.Easy[currentPzl.lvl] = true;
+						lclStore.progress.Easy[currentPzl.lvl] = true;
 						break;
 					case 'Normal':
-						progress.Normal[currentPzl.lvl] = true;
+						lclStore.progress.Normal[currentPzl.lvl] = true;
 						break;
 					case 'Hard':
-						progress.Hard[currentPzl.lvl] = true;
+						lclStore.progress.Hard[currentPzl.lvl] = true;
 						break;
 					case 'VHard':
-						progress.VHard[currentPzl.lvl] = true;
+						lclStore.progress.VHard[currentPzl.lvl] = true;
 						break;
 				}
 
-				localStorage.setItem('completionRate', JSON.stringify(progress));
+				saveLclStorage();
 				updateStats();
 			}
 		};
@@ -417,46 +439,84 @@
 			var total = 0;
 
 			// Easy
-			for (var i = 0; i < progress.Easy.length; i++) {
-				if (progress.Easy[i]) completed++;
+			for (var i = 0; i < lclStore.progress.Easy.length; i++) {
+				if (lclStore.progress.Easy[i]) completed++;
 			}
 			completed *= 100;
-			completed /= progress.Easy.length;
+			completed /= lclStore.progress.Easy.length;
 			total += completed;
 			$('#easyStat').html(completed);
 
 			// Normal
 			completed = 0;
-			for (var i = 0; i < progress.Normal.length; i++) {
-				if (progress.Normal[i]) completed++;
+			for (var i = 0; i < lclStore.progress.Normal.length; i++) {
+				if (lclStore.progress.Normal[i]) completed++;
 			}
 			completed *= 100;
-			completed /= progress.Normal.length;
+			completed /= lclStore.progress.Normal.length;
 			total += completed;
 			$('#nrmlStat').html(completed);
 
 			// Hard
 			completed = 0;
-			for (var i = 0; i < progress.Hard.length; i++) {
-				if (progress.Hard[i]) completed++;
+			for (var i = 0; i < lclStore.progress.Hard.length; i++) {
+				if (lclStore.progress.Hard[i]) completed++;
 			}
 			completed *= 100;
-			completed /= progress.Hard.length;
+			completed /= lclStore.progress.Hard.length;
 			total += completed;
 			$('#hrdStat').html(completed);
 
 			// Very Hard
 			completed = 0;
-			for (var i = 0; i < progress.VHard.length; i++) {
-				if (progress.VHard[i]) completed++;
+			for (var i = 0; i < lclStore.progress.VHard.length; i++) {
+				if (lclStore.progress.VHard[i]) completed++;
 			}
 			completed *= 100;
-			completed /= progress.VHard.length;
+			completed /= lclStore.progress.VHard.length;
 			total += completed;
 			$('#vhrdStat').html(completed);
 
 			// Total
 			$('#ttlStat').html(total /= 4);
+		};
+
+		var saveLclStorage = function() {
+			// Progress Data
+			localStorage.setItem('completionRate', JSON.stringify(lclStore.progress));
+
+			// Music Data
+			localStorage.setItem('music', lclStore.mIsPlaying);
+
+			// Sfx Data 
+			localStorage.setItem('sfx', lclStore.sfxEn);
+		}
+
+		var readLclStorage = function() {
+			// Music Data
+			if (localStorage.getItem('music') !== null) {
+				lclStore.mIsPlaying = (localStorage.getItem('music') == 'true');
+				if (!lclStore.mIsPlaying) amb.pause();
+				else amb.play();
+				$('#chbxM').attr('checked', lclStore.mIsPlaying);
+				$('#chbxM').button("refresh");
+			}
+
+			// Sfx Data 
+			if (localStorage.getItem('sfx') !== null) {
+				lclStore.sfxEn = (localStorage.getItem('sfx') == 'true');
+				$('#chbxS').attr('checked', lclStore.sfxEn);
+				$('#chbxS').button("refresh");
+			}
+
+			// Progress Data
+			if (localStorage.getItem('completionRate') !== null) {
+				var ls = JSON.parse(localStorage.getItem('completionRate'));
+				lclStore.progress.Easy = ls.Easy;
+				lclStore.progress.Normal = ls.Normal;
+				lclStore.progress.Hard = ls.Hard;
+				lclStore.progress.VHard = ls.VHard;
+			}
 		};
 
 		var readData = function() {
@@ -465,92 +525,30 @@
 				url: './data/puzzles.json',
 				type: 'get',
 				success: function(data, textStatus, jqXHR) {
-					console.log("Successfully loaded the puzzles!")
 					puzzles = {
 						Easy: [],
 						Normal: [],
 						Hard: [],
 						VHard: []
 					};
-					progress = {
-						Easy: [],
-						Normal: [],
-						Hard: [],
-						VHard: []
-					};
 					for (var i = 0; i < data.Easy.length; i++) {
-						progress.Easy[i] = false;
+						lclStore.progress.Easy[i] = lclStore.progress.Easy[i] || false;
 						puzzles.Easy[i] = data.Easy[i].code;
 					}
 					for (var i = 0; i < data.Normal.length; i++) {
-						progress.Normal[i] = false;
+						lclStore.progress.Normal[i] = lclStore.progress.Normal[i] || false;
 						puzzles.Normal[i] = data.Normal[i].code;
 					}
 					for (var i = 0; i < data.Hard.length; i++) {
-						progress.Hard[i] = false;
+						lclStore.progress.Hard[i] = lclStore.progress.Hard[i] || false;
 						puzzles.Hard[i] = data.Hard[i].code;
 					}
 					for (var i = 0; i < data.VHard.length; i++) {
-						progress.VHard[i] = false;
+						lclStore.progress.VHard[i] = lclStore.progress.VHard[i] || false;
 						puzzles.VHard[i] = data.VHard[i].code;
 					}
 
-					if (JSON.parse(localStorage.getItem('completionRate')) !== 'undefined' && JSON.parse(localStorage.getItem('completionRate')) !== null) {
-						console.log('loaded the localStorage');
-						var ls = JSON.parse(localStorage.getItem('completionRate'));
-						if ((ls.Easy.length === progress.Easy.length) &&
-							(ls.Normal.length === progress.Normal.length) &&
-							(ls.Hard.length === progress.Hard.length) &&
-							(ls.VHard.length === progress.VHard.length)) progress = ls;
-						else {
-							if (ls.Easy.length !== progress.Easy.length) {
-								if (ls.Easy.length > progress.Easy.length) {
-									console.log('Puzzles removed from EASY?');
-								} else {
-									var diff = progress.Easy.length;
-									progress.Easy = ls.Easy;
-									for (var i = progress.Easy.length; i < diff; i++) {
-										progress.Easy[i] = false;
-									}
-								}
-							}
-							if (ls.Normal.length !== progress.Normal.length) {
-								if (ls.Normal.length > progress.Normal.length) {
-									console.log('Puzzles removed from EASY?');
-								} else {
-									var diff = progress.Normal.length;
-									progress.Normal = ls.Normal;
-									for (var i = progress.Normal.length; i < diff; i++) {
-										progress.Normal[i] = false;
-									}
-								}
-							}
-							if (ls.Hard.length !== progress.Hard.length) {
-								if (ls.Hard.length > progress.Hard.length) {
-									console.log('Puzzles removed from EASY?');
-								} else {
-									var diff = progress.Hard.length;
-									progress.Hard = ls.Hard;
-									for (var i = progress.Hard.length; i < diff; i++) {
-										progress.Hard[i] = false;
-									}
-								}
-							}
-							if (ls.VHard.length !== progress.VHard.length) {
-								if (ls.VHard.length > progress.VHard.length) {
-									console.log('Puzzles removed from EASY?');
-								} else {
-									var diff = progress.VHard.length;
-									progress.VHard = ls.VHard;
-									for (var i = progress.VHard.length; i < diff; i++) {
-										progress.VHard[i] = false;
-									}
-								}
-							}
-						}
-					}
-
-					localStorage.setItem('completionRate', JSON.stringify(progress));
+					saveLclStorage();
 					updateStats();
 					nextPuzzle();
 				},
@@ -559,6 +557,7 @@
 				}
 			});
 		};
+		readLclStorage();
 		readData();
 
 		var updateChar = function() {
@@ -573,11 +572,13 @@
 			location.reload();
 		});
 
+		// Easter Egg
 		$todo.on('click', function(e) {
 			pandaCntr--;
 			if (pandaCntr === 0) {
+				pandaCntr = 5;
 				// SFX
-				if (sfxEn) sfx.play();
+				if (lclStore.sfxEn) sfx.play();
 
 				p_zeroChar = zeroChar;
 				p_oneChar = oneChar;
@@ -590,7 +591,7 @@
 		// Random button click
 		$('.btnRndm').on('click', function(e) {
 			// SFX
-			if (sfxEn) sfx.play();
+			if (lclStore.sfxEn) sfx.play();
 
 			rndPuzzle();
 			updateStats();
@@ -599,7 +600,7 @@
 		// Puzzle Complete
 		$victory.on('click', function(e) {
 			// SFX
-			if (sfxEn) sfx.play();
+			if (lclStore.sfxEn) sfx.play();
 
 			toggleVictory();
 			nextPuzzle();
@@ -609,7 +610,7 @@
 		// Flip buttons
 		$btnsFlip.on('click', function(e) {
 			// SFX
-			if (sfxEn) sfx.play();
+			if (lclStore.sfxEn) sfx.play();
 
 			// On a Left flip
 			if ($(e.target).hasClass('flipL')) {
@@ -638,7 +639,7 @@
 			$(this).children('p').html(val);
 
 			// SFX
-			if (sfxEn) sfx.play();
+			if (lclStore.sfxEn) sfx.play();
 
 			// Update the todo
 			updateTodo();
@@ -649,14 +650,16 @@
 
 		// Toggle music
 		$('#chbxM').on('click', function(e) {
-			if (mIsPlaying) amb.pause();
+			if (lclStore.mIsPlaying) amb.pause();
 			else amb.play();
-			mIsPlaying = !mIsPlaying;
+			lclStore.mIsPlaying = !lclStore.mIsPlaying;
+			saveLclStorage();
 		});
 
 		// Toggle SFX
 		$('#chbxS').on('click', function(e) {
-			sfxEn = !sfxEn;
+			lclStore.sfxEn = !lclStore.sfxEn;
+			saveLclStorage();
 		});
 	});
 })(jQuery);
