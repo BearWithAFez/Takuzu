@@ -9,13 +9,12 @@
 	touch-action: none;
 }
 
-
-
-
-
-
-
-
+.ui-spinner-input {
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
 
 
 
@@ -85,6 +84,9 @@
 
 
 
+
+
+
 /* Interaction Cues
 ----------------------------------*/
 
@@ -92,6 +94,9 @@
 	cursor: default !important;
 	pointer-events: none;
 }
+
+
+
 
 
 
@@ -122,6 +127,9 @@
 	margin-left: -8px;
 	display: block;
 }
+
+
+
 
 
 
@@ -313,6 +321,9 @@
 
 
 
+
+
+
 /* icon support */
 
 .ui-menu-icons {
@@ -333,6 +344,9 @@
 
 
 
+
+
+
 /* left-aligned */
 
 .ui-menu .ui-icon {
@@ -342,6 +356,9 @@
 	left: .2em;
 	margin: auto 0;
 }
+
+
+
 
 
 
@@ -396,6 +413,9 @@
 
 
 
+
+
+
 /* to make room for the icon, a width needs to be set here */
 
 .ui-button-icon-only {
@@ -415,11 +435,17 @@
 
 
 
+
+
+
 /* no icon support for input elements */
 
 input.ui-button.ui-button-icon-only {
 	text-indent: 0;
 }
+
+
+
 
 
 
@@ -456,6 +482,9 @@ input.ui-button.ui-icon-notext .ui-icon {
 	white-space: normal;
 	padding: .4em 1em;
 }
+
+
+
 
 
 
@@ -530,6 +559,9 @@ button.ui-button::-moz-focus-inner {
 .ui-controlgroup-vertical .ui-controlgroup-label.ui-widget-content {
 	border-bottom: none;
 }
+
+
+
 
 
 
@@ -706,6 +738,9 @@ button.ui-button::-moz-focus-inner {
 
 
 
+
+
+
 /* with multiple calendars */
 
 .ui-datepicker.ui-datepicker-multi {
@@ -747,6 +782,9 @@ button.ui-button::-moz-focus-inner {
 	width: 100%;
 	font-size: 0;
 }
+
+
+
 
 
 
@@ -802,6 +840,9 @@ button.ui-button::-moz-focus-inner {
 	border-right-width: 0;
 	border-left-width: 1px;
 }
+
+
+
 
 
 
@@ -1042,6 +1083,9 @@ button.ui-button.ui-widget {
 
 
 
+
+
+
 /* support: IE8 - See #6727 */
 
 .ui-slider.ui-state-disabled .ui-slider-handle,
@@ -1125,6 +1169,9 @@ button.ui-button.ui-widget {
 	overflow: hidden;
 	right: 0;
 }
+
+
+
 
 
 
@@ -1223,6 +1270,9 @@ body .ui-tooltip {
 
 
 
+
+
+
 /* Component containers
 ----------------------------------*/
 
@@ -1278,6 +1328,9 @@ body .ui-tooltip {
 
 
 
+
+
+
 /* Interaction states
 ----------------------------------*/
 
@@ -1285,6 +1338,9 @@ body .ui-tooltip {
 .ui-widget-content .ui-state-default,
 .ui-widget-header .ui-state-default,
 .ui-button,
+
+
+
 
 
 
@@ -1385,6 +1441,9 @@ a.ui-button:active,
 
 
 
+
+
+
 /* Interaction Cues
 ----------------------------------*/
 
@@ -1466,6 +1525,9 @@ a.ui-button:active,
 
 
 
+
+
+
 /* Icons
 ----------------------------------*/
 
@@ -1511,6 +1573,9 @@ a.ui-button:active,
 .ui-button .ui-icon {
 	background-image: url("images/ui-icons_777777_256x240.png");
 }
+
+
+
 
 
 
@@ -2082,6 +2147,9 @@ a.ui-button:active,
 
 
 
+
+
+
 /* ui-icon-seek-first is deprecated, use ui-icon-seek-start instead */
 
 .ui-icon-seek-first {
@@ -2247,6 +2315,9 @@ a.ui-button:active,
 
 
 
+
+
+
 /* Misc visuals
 ----------------------------------*/
 
@@ -2280,6 +2351,9 @@ a.ui-button:active,
 .ui-corner-br {
 	border-bottom-right-radius: 3px;
 }
+
+
+
 
 
 

@@ -12,9 +12,17 @@
 		console.log('Script <scripts.js> loaded.');
 
 		// Variables
+		var oneChar = '1';
+		var zeroChar = '0';
 		var currentSide;
 		var puzzles;
 		var progress;
+		var currentPzl = {
+			dif: "",
+			lvl: 0,
+			max: 1,
+			code: ""
+		}
 
 		// Shortcuts
 		var $btnsFlip = $('.round-button div p');
@@ -30,20 +38,26 @@
 		var $rows = $('tr');
 		var $gCard = $('.thegamecard');
 		var $victory = $('#victory');
+		var $spinner = $('#spnrLvl').spinner();
+		var $selDif = $('#selDiff');
 
 		// jQuery UI tagging
-		$('#selDiff').selectmenu();
-		$('#spnrLvl').spinner({
+		$selDif.selectmenu();
+		$selDif.on('selectmenuchange', function() {
+			newDifSelMenu();
+		});
+		$spinner.spinner({
 			min: 1,
 			max: 100,
-			step: 1
+			step: 1,
+			stop: function(event, ui) {
+				currentPzl.lvl = $spinner.spinner().val() - 1;
+				updatePuzzle();
+			}
 		}).val(1);
+		$('.ui-spinner-input').prop('disabled', true);
 		$('.btnRndm').button({
 			icon: "ui-icon-shuffle",
-			iconPosition: "end"
-		});
-		$('.btnPlay').button({
-			icon: "ui-icon-play",
 			iconPosition: "end"
 		});
 		$('[type="checkbox"]').checkboxradio();
@@ -77,9 +91,145 @@
 			}
 		};
 
-		var nextPuzzle = function() {
-			console.log('NEXT PUZZLE');
+		var newDifSelMenu = function() {
+			var nDif = $selDif.val();
+			var m;
+			var l;
+			var c;
+			switch (nDif) {
+				case 'Easy':
+					m = progress.Easy.length;
+					l = (currentPzl.lvl > m) ? m - 1 : currentPzl.lvl;
+					c = puzzles.Easy[l];
+					break;
+				case 'Normal':
+					m = progress.Normal.length;
+					l = (currentPzl.lvl > m) ? m - 1 : currentPzl.lvl;
+					c = puzzles.Normal[l];
+					break;
+				case 'Hard':
+					m = progress.Hard.length;
+					l = (currentPzl.lvl > m) ? m - 1 : currentPzl.lvl;
+					c = puzzles.Hard[l];
+					break;
+				case 'VHard':
+					m = progress.VHard.length;
+					l = (currentPzl.lvl > m) ? m - 1 : currentPzl.lvl;
+					c = puzzles.VHard[l];
+					break;
+			}
+			selPuzzle(nDif, l, m, c);
 		};
+
+		var updatePuzzle = function() {
+			// Notify
+			console.log('Loaded in puzzle ' + (currentPzl.dif) + " - " + (currentPzl.lvl + 1) + '.');
+
+			// Update the html ellements
+			$('.diff').html(currentPzl.dif);
+			$('.lvl').html(currentPzl.lvl + 1);
+			$spinner.spinner({ max: currentPzl.max }).val(currentPzl.lvl + 1);
+			$selDif.val(currentPzl.dif).selectmenu("refresh");
+
+			var code = currentPzl.code;
+			var c;
+			for (var i = 0; i < $cellTexts.length; i++) {
+				c = code.charAt(i);
+				$cellTexts.eq(i).html((c === 'e') ? '' : c).parents('td').toggleClass('editable', (c === 'e') ? true : false);
+			}
+			updateTodo();
+			checkit();
+		};
+
+		var nextPuzzle = function() {
+			// Easy
+			for (var i = 0; i < progress.Easy.length; i++) {
+				if (!progress.Easy[i]) {
+					selPuzzle('Easy', i, progress.Easy.length, puzzles.Easy[i]);
+					return;
+				}
+			}
+
+			// Normal
+			for (var i = 0; i < progress.Normal.length; i++) {
+				if (!progress.Normal[i]) {
+					selPuzzle('Normal', i, progress.Normal.length, puzzles.Normal[i]);
+					return;
+				}
+			}
+
+			// Hard
+			for (var i = 0; i < progress.Hard.length; i++) {
+				if (!progress.Hard[i]) {
+					selPuzzle('Hard', i, progress.Hard.length, puzzles.Hard[i]);
+					return;
+				}
+			}
+
+			// VHard
+			for (var i = 0; i < progress.VHard.length; i++) {
+				if (!progress.VHard[i]) {
+					selPuzzle('VHard', i, progress.VHard.length, puzzles.VHard[i]);
+					return;
+				}
+			}
+		};
+
+		var selPuzzle = function(d, l, m, c) {
+			currentPzl.dif = d;
+			currentPzl.lvl = l;
+			currentPzl.max = m;
+			currentPzl.code = c;
+			updatePuzzle();
+		};
+
+		var rndPuzzle = function() {
+			var d = Math.floor(Math.random() * 4) + 1;
+			var m;
+			switch (d) {
+				case 1:
+					m = progress.Easy.length;
+					break;
+				case 2:
+					m = progress.Normal.length;
+					break;
+				case 3:
+					m = progress.Hard.length;
+					break;
+				case 4:
+					m = progress.VHard.length;
+					break;
+			}
+			while (true) {
+				var i = Math.floor(Math.random() * m);
+				switch (d) {
+					case 1:
+						if (!progress.Easy[i]) {
+							selPuzzle('Easy', i, m, puzzles.Easy[i]);
+							return;
+						}
+						break;
+					case 2:
+						if (!progress.Normal[i]) {
+							selPuzzle('Normal', i, m, puzzles.Normal[i]);
+							return;
+						}
+						break;
+					case 3:
+						if (!progress.Hard[i]) {
+							selPuzzle('Hard', i, m, puzzles.Hard[i]);
+							return;
+						}
+						break;
+					case 4:
+						if (!progress.VHard[i]) {
+							selPuzzle('VHard', i, m, puzzles.VHard[i]);
+							return;
+						}
+						break;
+				}
+			}
+		}
 
 		var toggleVictory = function() {
 			$gCard.toggleClass('blurred');
@@ -106,7 +256,7 @@
 			var todo = 36;
 
 			$cellTexts.each(function() {
-				if ($(this).html() === '1' || $(this).html() === '0') todo--;
+				if ($(this).html() === oneChar || $(this).html() === zeroChar) todo--;
 			});
 
 			$todo.html(todo);
@@ -143,11 +293,11 @@
 				}
 
 				// val check (hor)
-				if ($cells.eq(i).children('p').html() === '1') {
+				if ($cells.eq(i).children('p').html() === oneChar) {
 					horCntOne++;
 					horStrkOne++;
 					horStrkZero = 0;
-				} else if ($cells.eq(i).children('p').html() === '0') {
+				} else if ($cells.eq(i).children('p').html() === zeroChar) {
 					horCntZero++;
 					horStrkZero++;
 					horStrkOne = 0;
@@ -156,11 +306,11 @@
 				}
 
 				// val check (ver)
-				if ($cells.eq(j).children('p').html() === '1') {
+				if ($cells.eq(j).children('p').html() === oneChar) {
 					verCntOne++;
 					verStrkOne++;
 					verStrkZero = 0;
-				} else if ($cells.eq(j).children('p').html() === '0') {
+				} else if ($cells.eq(j).children('p').html() === zeroChar) {
 					verCntZero++;
 					verStrkZero++;
 					verStrkOne = 0;
@@ -214,11 +364,77 @@
 			}
 
 			// Endgame?
-			if ((errs === 0) && ($todo.html() === '0')) {
+			if ((errs === 0) && ($todo.html() === zeroChar)) {
 				toggleVictory();
+
+				switch (currentPzl.dif) {
+					case 'Easy':
+						progress.Easy[currentPzl.lvl] = true;
+						break;
+					case 'Normal':
+						progress.Normal[currentPzl.lvl] = true;
+						break;
+					case 'Hard':
+						progress.Hard[currentPzl.lvl] = true;
+						break;
+					case 'VHard':
+						progress.VHard[currentPzl.lvl] = true;
+						break;
+				}
+
+				localStorage.setItem('completionRate', JSON.stringify(progress));
+				updateStats();
 			}
 		};
 		checkit();
+
+		var updateStats = function() {
+			// Counter
+			var completed = 0;
+			var total = 0;
+
+			// Easy
+			for (var i = 0; i < progress.Easy.length; i++) {
+				if (progress.Easy[i]) completed++;
+			}
+			completed *= 100;
+			completed /= progress.Easy.length;
+			total += completed;
+			$('#easyStat').html(completed);
+
+			// Normal
+			completed = 0;
+			for (var i = 0; i < progress.Normal.length; i++) {
+				if (progress.Normal[i]) completed++;
+			}
+			completed *= 100;
+			completed /= progress.Normal.length;
+			total += completed;
+			$('#nrmlStat').html(completed);
+
+			// Hard
+			completed = 0;
+			for (var i = 0; i < progress.Hard.length; i++) {
+				if (progress.Hard[i]) completed++;
+			}
+			completed *= 100;
+			completed /= progress.Hard.length;
+			total += completed;
+			$('#hrdStat').html(completed);
+
+			// Very Hard
+			completed = 0;
+			for (var i = 0; i < progress.VHard.length; i++) {
+				if (progress.VHard[i]) completed++;
+			}
+			completed *= 100;
+			completed /= progress.VHard.length;
+			total += completed;
+			$('#vhrdStat').html(completed);
+
+			// Total
+			$('#ttlStat').html(total /= 4);
+		};
 
 		var readData = function() {
 			$.ajax({
@@ -256,9 +472,9 @@
 						puzzles.VHard[i] = data.VHard[i].code;
 					}
 
-					if (localStorage.getItem('completionRate') !== 'undefined') {
+					if (JSON.parse(localStorage.getItem('completionRate')) !== 'undefined' && JSON.parse(localStorage.getItem('completionRate')) !== null) {
 						console.log('loaded the localStorage');
-						var ls = localStorage.getItem('completionRate');
+						var ls = JSON.parse(localStorage.getItem('completionRate'));
 						if ((ls.Easy.length === progress.Easy.length) &&
 							(ls.Normal.length === progress.Normal.length) &&
 							(ls.Hard.length === progress.Hard.length) &&
@@ -310,6 +526,10 @@
 							}
 						}
 					}
+
+					localStorage.setItem('completionRate', JSON.stringify(progress));
+					updateStats();
+					nextPuzzle();
 				},
 				error: function(jqXHR, textStatus, errorThrown) {
 					console.log(errorThrown);
@@ -318,20 +538,23 @@
 		};
 		readData();
 
-		var saveProgress = function() {
-			localStorage.setItem('completionRate', progress);
-		}
-		saveProgress();
-
 		// **** EVENTS ****
 		// Refresh this page!
 		$title.on('click', function(e) {
 			location.reload();
 		});
 
+		// Random button click
+		$('.btnRndm').on('click', function(e) {
+			rndPuzzle();
+			updateStats();
+		});
+
 		// Puzzle Complete
 		$victory.on('click', function(e) {
 			toggleVictory();
+			nextPuzzle();
+			updateStats();
 		});
 
 		// Flip buttons
@@ -359,7 +582,7 @@
 
 			// Change value
 			var val = $(this).children('p').html();
-			val = (val === '0') ? '1' : ((val === '1') ? '' : '0');
+			val = (val === zeroChar) ? oneChar : ((val === oneChar) ? '' : zeroChar);
 			$(this).children('p').html(val);
 
 			// Update the todo

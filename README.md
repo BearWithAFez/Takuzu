@@ -19,15 +19,15 @@ If you have any remarks please hit me up, this is a learning experience.
 
 Last done: 
 
-* Added the Game functionality
-* Added the game completion screen.
+* The JSON reader and game builder.
+* The level selector.
+* The random level selector.
+* The Stats.
 
 Todo:
 
-* Enable the JSON reader and game builder.
-* Enable the level selector.
-* Enable random level selector.
-* Enable Stats.
 * Add Music.
 * Add VFX.
 * Enable the Settings for Music and VFX.
+* Add a Easter Egg.
+* Code Cleanup
