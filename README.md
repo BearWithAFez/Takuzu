@@ -12,6 +12,7 @@ Just go to the link next to the title, and you'll see the current version in act
 ## Authors
 
 * **Dwight Van der Velpen** - *The code*
+* **Fanto8BC** - *[BG music](https://www.looperman.com/loops/detail/115700/the-sound-of-the-past-by-fanto8bc-free-100bpm-ambient-synth-loop)*
 
 If you have any remarks please hit me up, this is a learning experience.
 
@@ -19,15 +20,11 @@ If you have any remarks please hit me up, this is a learning experience.
 
 Last done: 
 
-* The JSON reader and game builder.
-* The level selector.
-* The random level selector.
-* The Stats.
+* Easter Egg
+* Added Music and SFX
+* Added Settings for Music and SFX.
 
 Todo:
 
-* Add Music.
-* Add VFX.
-* Enable the Settings for Music and VFX.
-* Add a Easter Egg.
-* Code Cleanup
+* More puzzles.
+* Code Cleanup.

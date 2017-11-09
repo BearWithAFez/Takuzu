@@ -125,14 +125,16 @@ body {
 	transform-style: preserve-3d;
 }
 
-#github {
+#github,
+.credit {
 	-webkit-transition: color 200ms ease;
 	-ms-transition: color 200ms ease;
 	transition: color 200ms ease;
 	text-decoration: underline;
 }
 
-#github:hover {
+#github:hover,
+.credit:hover {
 	color: #f7712e;
 }
 
@@ -374,15 +376,15 @@ table td {
 	margin-bottom: 20px;
 }
 
-.editable p {
+.editable .cell {
 	color: #0f138e;
 }
 
-.error p {
+.error .cell {
 	color: #d30808;
 }
 
-.nonEditable p {
+.nonEditable .cell {
 	color: #1c1c1c;
 }
 

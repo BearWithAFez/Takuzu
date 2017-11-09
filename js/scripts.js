@@ -14,6 +14,14 @@
 		// Variables
 		var oneChar = '1';
 		var zeroChar = '0';
+		var p_zeroChar = '';
+		var p_oneChar = '';
+		var sfx = new Audio('./data/click.mp3');
+		var sfxv = new Audio('./data/victory.mp3');
+		var amb = new Audio('./data/ambient.wav');
+		var mIsPlaying = true;
+		var sfxEn = true;
+		var pandaCntr = 5;
 		var currentSide;
 		var puzzles;
 		var progress;
@@ -41,9 +49,19 @@
 		var $spinner = $('#spnrLvl').spinner();
 		var $selDif = $('#selDiff');
 
+		// Music		
+		amb.addEventListener('ended', function() {
+			this.currentTime = 0;
+			this.play();
+		}, false);
+		amb.play();
+
 		// jQuery UI tagging
 		$selDif.selectmenu();
 		$selDif.on('selectmenuchange', function() {
+			// SFX
+			if (sfxEn) sfx.play();
+
 			newDifSelMenu();
 		});
 		$spinner.spinner({
@@ -51,6 +69,9 @@
 			max: 100,
 			step: 1,
 			stop: function(event, ui) {
+				// SFX
+				if (sfxEn) sfx.play();
+
 				currentPzl.lvl = $spinner.spinner().val() - 1;
 				updatePuzzle();
 			}
@@ -135,7 +156,7 @@
 			var c;
 			for (var i = 0; i < $cellTexts.length; i++) {
 				c = code.charAt(i);
-				$cellTexts.eq(i).html((c === 'e') ? '' : c).parents('td').toggleClass('editable', (c === 'e') ? true : false);
+				$cellTexts.eq(i).html((c === 'e') ? '' : ((c === '0') ? zeroChar : oneChar)).parents('td').toggleClass('editable', (c === 'e') ? true : false).toggleClass('nonEditable', (c === 'e') ? false : true);
 			}
 			updateTodo();
 			checkit();
@@ -364,7 +385,9 @@
 			}
 
 			// Endgame?
-			if ((errs === 0) && ($todo.html() === zeroChar)) {
+			if ((errs === 0) && ($todo.html() === '0')) {
+				// SFXv
+				if (sfxEn) sfxv.play();
 				toggleVictory();
 
 				switch (currentPzl.dif) {
@@ -538,20 +561,46 @@
 		};
 		readData();
 
+		var updateChar = function() {
+			for (var i = 0; i < $cellTexts.length; i++) {
+				$cellTexts.eq(i).html(($cellTexts.eq(i).html() === p_oneChar) ? oneChar : (($cellTexts.eq(i).html() === p_zeroChar) ? zeroChar : ''));
+			}
+		};
+
 		// **** EVENTS ****
 		// Refresh this page!
 		$title.on('click', function(e) {
 			location.reload();
 		});
 
+		$todo.on('click', function(e) {
+			pandaCntr--;
+			if (pandaCntr === 0) {
+				// SFX
+				if (sfxEn) sfx.play();
+
+				p_zeroChar = zeroChar;
+				p_oneChar = oneChar;
+				zeroChar = '🐼';
+				oneChar = '🎋';
+				updateChar();
+			}
+		});
+
 		// Random button click
 		$('.btnRndm').on('click', function(e) {
+			// SFX
+			if (sfxEn) sfx.play();
+
 			rndPuzzle();
 			updateStats();
 		});
 
 		// Puzzle Complete
 		$victory.on('click', function(e) {
+			// SFX
+			if (sfxEn) sfx.play();
+
 			toggleVictory();
 			nextPuzzle();
 			updateStats();
@@ -559,6 +608,9 @@
 
 		// Flip buttons
 		$btnsFlip.on('click', function(e) {
+			// SFX
+			if (sfxEn) sfx.play();
+
 			// On a Left flip
 			if ($(e.target).hasClass('flipL')) {
 				toggleBacklayer(e.target.innerHTML);
@@ -585,11 +637,26 @@
 			val = (val === zeroChar) ? oneChar : ((val === oneChar) ? '' : zeroChar);
 			$(this).children('p').html(val);
 
+			// SFX
+			if (sfxEn) sfx.play();
+
 			// Update the todo
 			updateTodo();
 
 			// Check
 			checkit();
+		});
+
+		// Toggle music
+		$('#chbxM').on('click', function(e) {
+			if (mIsPlaying) amb.pause();
+			else amb.play();
+			mIsPlaying = !mIsPlaying;
+		});
+
+		// Toggle SFX
+		$('#chbxS').on('click', function(e) {
+			sfxEn = !sfxEn;
 		});
 	});
 })(jQuery);
