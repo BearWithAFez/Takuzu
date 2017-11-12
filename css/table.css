@@ -1,0 +1,47 @@
+/*
+ * Binary sudoku table styles
+ *
+ * @author Dwight Van der Velpen <dfr34kz@gmail.com>
+ */
+
+table {
+	width: 420px;
+	margin: 10px auto 0;
+
+	background: url('../data/takuzuBG.png') no-repeat;
+	background-size: 100% 100%;
+}
+
+table td {
+	position: relative;
+
+	overflow: hidden;
+
+	width: 16.66%;
+	padding-top: 16.66%;
+}
+
+.cell {
+	font-family: 'Permanent Marker', cursive;
+	font-size: 40px;
+
+	position: absolute;
+	top: 50%;
+	left: 50%;
+
+	margin: 0;
+
+	transform: translate(-50%, -50%);
+}
+
+.editable .cell {
+	color: #0f138e;
+}
+
+.error .cell {
+	color: #d30808;
+}
+
+.nonEditable .cell {
+	color: #1c1c1c;
+}

@@ -1,0 +1,19 @@
+/*
+ * Binary sudoku font styles
+ *
+ * @author Dwight Van der Velpen <dfr34kz@gmail.com>
+ */
+
+@font-face {
+	font-family: 'Permanent Marker';
+	font-style: normal;
+	font-weight: 400;
+	src: url('../font/Permanent_Marker/PermanentMarker-Regular.ttf');
+}
+
+@font-face {
+	font-family: 'Roboto';
+	font-style: normal;
+	font-weight: 300;
+	src: url('../font/Roboto/Roboto-Light.ttf');
+}

@@ -1,0 +1,187 @@
+/*
+ * Binary sudoku global styles
+ *
+ * @author Dwight Van der Velpen <dfr34kz@gmail.com>
+ */
+
+* {
+	font-family: 'Roboto', sans-serif;
+
+	margin: 0;
+	padding: 0;
+
+	webkit-tap-highlight-color: rgba(0, 0, 0, 0); // No tap colors on mobile
+}
+
+body {
+	font-size: 18px;
+
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+
+	display: none;
+
+	margin: 20px;
+
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	text-align: center;
+
+	background-color: #e1d9c0;
+
+	-webkit-perspective: 1600px;
+	-moz-perspective: 1600px;
+	-o-perspective: 1600px;
+	perspective: 1600px;
+}
+
+h1 {
+	font-family: 'Permanent Marker', cursive;
+	font-size: 40px;
+	line-height: 40px;
+
+	display: inline-block;
+
+	height: 10%;
+	margin: 0 auto;
+	padding: 5px;
+}
+
+h2 {
+	font-family: 'Permanent Marker', cursive;
+	font-size: 25px;
+	line-height: 25px;
+
+	margin-bottom: 15px;
+}
+
+a {
+	font-family: inherit;
+	font-size: inherit;
+
+	text-decoration: none;
+
+	color: inherit;
+}
+
+ol,
+ul {
+	margin: 0 10px;
+
+	list-style-position: inside;
+
+	text-align: left;
+}
+
+li {
+	font-size: 15px;
+}
+
+footer {
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	left: 0;
+
+	height: 4%;
+}
+
+fieldset {
+	display: inline-block;
+
+	margin-bottom: 10px;
+	padding: 2px;
+
+	border-color: rgba(0, 0, 0, .12);
+}
+
+
+/* === Media Queries === */
+
+@media only screen and (max-height: 675px),
+only screen and (max-width: 480px) {
+	table {
+		width: 380px;
+	}
+
+	#card {
+		max-height: 550px;
+	}
+}
+
+@media only screen and (max-height: 620px),
+only screen and (max-width: 430px) {
+	table {
+		width: 340px;
+	}
+
+	#card {
+		max-height: 500px;
+	}
+}
+
+@media only screen and (max-height: 570px),
+only screen and (max-width: 390px) {
+	table {
+		width: 300px;
+	}
+
+	#card {
+		max-height: 455px;
+	}
+
+	.cell {
+		font-size: 30px;
+	}
+}
+
+@media only screen and (max-height: 520px),
+only screen and (max-width: 350px) {
+	table {
+		width: 250px;
+	}
+
+	#card {
+		max-height: 430px;
+	}
+
+	.cell {
+		font-size: 25px;
+	}
+
+	#rules {
+		margin-bottom: 0;
+	}
+
+	footer {
+		font-size: 14px;
+	}
+
+	.credit {
+		font-size: 14px;
+	}
+
+	li {
+		font-size: 13px;
+	}
+}
+
+@media only screen and (max-height: 490px),
+only screen and (max-width: 285px) {
+	#card {
+		display: none;
+	}
+
+	#toSmall {
+		display: inline-block;
+	}
+
+	footer {
+		height: 20%;
+	}
+}

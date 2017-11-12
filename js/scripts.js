@@ -12,10 +12,11 @@
 		console.log('Script <scripts.js> loaded.');
 
 		// Variables
+		var deleteCntr = 2;
 		var oneChar = '1';
 		var zeroChar = '0';
-		var p_zeroChar = '';
-		var p_oneChar = '';
+		var p_zeroChar = '🐼';
+		var p_oneChar = '🎋';
 		var sfx = new Audio('./data/click.mp3');
 		var sfxv = new Audio('./data/victory.mp3');
 		var amb = new Audio('./data/ambient.wav');
@@ -40,6 +41,7 @@
 		}
 
 		// Shortcuts
+		var $deleteProgress = $('.deleteProgress');
 		var $btnsFlip = $('.round-button div p');
 		var $title = $('h1');
 		var $sides = $('.side');
@@ -53,6 +55,7 @@
 		var $rows = $('tr');
 		var $gCard = $('.thegamecard');
 		var $victory = $('#victory');
+		var $completion = $('#completion');
 		var $spinner = $('#spnrLvl').spinner();
 		var $selDif = $('#selDiff');
 
@@ -66,7 +69,7 @@
 		$selDif.selectmenu();
 		$selDif.on('selectmenuchange', function() {
 			// SFX
-			if (lclStore.sfxEn) sfx.play();
+			playSFX();
 
 			newDifSelMenu();
 		});
@@ -76,7 +79,7 @@
 			step: 1,
 			stop: function(event, ui) {
 				// SFX
-				if (lclStore.sfxEn) sfx.play();
+				playSFX();
 
 				currentPzl.lvl = $spinner.spinner().val() - 1;
 
@@ -113,6 +116,13 @@
 		currentSide = $helpSide;
 
 		// Methods
+		var playSFX = function() {
+			if (!lclStore.sfxEn) return;
+			sfx.pause();
+			sfx.currentTime = 0;
+			sfx.play();
+		}
+
 		var toggleBacklayer = function(destination) {
 			$sides.toggle(false);
 			currentSide.toggle(true);
@@ -216,6 +226,9 @@
 					return;
 				}
 			}
+
+			// Completed!
+			toggleCompletion();
 		};
 
 		var selPuzzle = function(d, l, m, c) {
@@ -277,6 +290,11 @@
 		var toggleVictory = function() {
 			$gCard.toggleClass('blurred');
 			$victory.toggle('puff');
+		}
+
+		var toggleCompletion = function() {
+			$gCard.toggleClass('blurred');
+			$completion.toggle('puff');
 		}
 
 		var flipLeft = function() {
@@ -433,6 +451,29 @@
 		};
 		checkit();
 
+		var resetStats = function() {
+			// Easy
+			for (var i = 0; i < lclStore.progress.Easy.length; i++) {
+				lclStore.progress.Easy[i] = false;
+			}
+
+			// Normal
+			for (var i = 0; i < lclStore.progress.Normal.length; i++) {
+				lclStore.progress.Normal[i] = false;
+			}
+
+			// Hard
+			for (var i = 0; i < lclStore.progress.Hard.length; i++) {
+				lclStore.progress.Hard[i] = false;
+			}
+
+			// VHard
+			for (var i = 0; i < lclStore.progress.VHard.length; i++) {
+				lclStore.progress.VHard[i] = false;
+			}
+			saveLclStorage();
+		}
+
 		var updateStats = function() {
 			// Counter
 			var completed = 0;
@@ -578,12 +619,11 @@
 			if (pandaCntr === 0) {
 				pandaCntr = 5;
 				// SFX
-				if (lclStore.sfxEn) sfx.play();
+				playSFX();
 
-				p_zeroChar = zeroChar;
-				p_oneChar = oneChar;
-				zeroChar = '🐼';
-				oneChar = '🎋';
+				p_zeroChar = [zeroChar, zeroChar = p_zeroChar][0];
+				p_oneChar = [oneChar, oneChar = p_oneChar][0];
+
 				updateChar();
 			}
 		});
@@ -591,7 +631,7 @@
 		// Random button click
 		$('.btnRndm').on('click', function(e) {
 			// SFX
-			if (lclStore.sfxEn) sfx.play();
+			playSFX();
 
 			rndPuzzle();
 			updateStats();
@@ -600,17 +640,41 @@
 		// Puzzle Complete
 		$victory.on('click', function(e) {
 			// SFX
-			if (lclStore.sfxEn) sfx.play();
+			playSFX();
 
 			toggleVictory();
 			nextPuzzle();
 			updateStats();
 		});
 
+		// Game Complete
+		$completion.on('click', function(e) {
+			// SFX
+			playSFX();
+
+			toggleCompletion();
+			resetStats();
+			nextPuzzle();
+			updateStats();
+		});
+
+		// Delete Progress
+		$deleteProgress.on('click', function(e) {
+			if (deleteCntr === 0) {
+				resetStats();
+				location.reload();
+			}
+
+			if (deleteCntr === 2) $deleteProgress.html('Are you SURE you want to delete progress?');
+			if (deleteCntr === 1) $deleteProgress.html('This is the LAST WARNING, you will DELETE progress!');
+
+			deleteCntr--;
+		});
+
 		// Flip buttons
 		$btnsFlip.on('click', function(e) {
 			// SFX
-			if (lclStore.sfxEn) sfx.play();
+			playSFX();
 
 			// On a Left flip
 			if ($(e.target).hasClass('flipL')) {
@@ -639,7 +703,7 @@
 			$(this).children('p').html(val);
 
 			// SFX
-			if (lclStore.sfxEn) sfx.play();
+			playSFX();
 
 			// Update the todo
 			updateTodo();

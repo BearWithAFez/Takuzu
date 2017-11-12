@@ -1,0 +1,64 @@
+/*
+ * Binary sudoku helper styles
+ *
+ * @author Dwight Van der Velpen <dfr34kz@gmail.com>
+ */
+
+.blurred {
+	pointer-events: none;
+
+	-webkit-filter: blur(5px);
+	-moz-filter: blur(5px);
+	-o-filter: blur(5px);
+	-ms-filter: blur(5px);
+	filter: blur(5px);
+}
+
+.bold {
+	font-weight: bold;
+}
+
+.centerV {
+	position: absolute;
+	top: 50%;
+	left: 0;
+
+	width: 100%;
+	margin: 0;
+
+	transform: translate(0, -50%);
+}
+
+.cursor {
+	cursor: pointer;
+	cursor: hand;
+}
+
+.rotated {
+	z-index: 2;
+
+	-webkit-transform: rotateY( 180deg);
+	-moz-transform: rotateY( 180deg);
+	-o-transform: rotateY( 180deg);
+	transform: rotateY( 180deg);
+}
+
+.hidden {
+	display: none;
+}
+
+.content {
+	position: relative;
+
+	overflow: hidden;
+
+	height: 85%;
+}
+
+.TR {
+	right: 15px;
+}
+
+.TL {
+	left: 15px;
+}

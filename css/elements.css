@@ -1,0 +1,177 @@
+/*
+ * Binary sudoku element styles
+ *
+ * @author Dwight Van der Velpen <dfr34kz@gmail.com>
+ */
+
+
+/* === Face Element === */
+
+#github,
+.credit {
+	-webkit-transition: color 200ms ease;
+	-ms-transition: color 200ms ease;
+	transition: color 200ms ease;
+	text-decoration: underline;
+}
+
+#github:hover,
+.credit:hover {
+	color: #f7712e;
+}
+
+.deleteProgress {
+	font-size: 15px;
+	font-style: italic;
+
+	padding: 5px 0;
+
+	color: grey;
+}
+
+#info {
+	display: inline-block;
+
+	margin-top: 10px;
+	padding: 5px 35px;
+
+	text-align: center;
+
+	color: white;
+	background: url('../data/swipe1.png') no-repeat;
+	background-size: 100% 100%;
+}
+
+#ib {
+	display: table;
+
+	margin: 0 auto;
+	padding: 5px 35px;
+
+	color: white;
+	background: url('../data/swipe2.png') no-repeat;
+	background-size: 100% 100%;
+}
+
+
+/* === Pop-up Elements === */
+
+#victory,
+#completion {
+	position: absolute;
+	top: 5%;
+	left: 5%;
+
+	display: none;
+
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	width: 90%;
+	height: 90%;
+
+	text-align: center;
+
+	border: 2px solid #8b743d;
+	border-radius: 20px;
+	background: white;
+
+	-o-box-sizing: border-box;
+}
+
+.thegamecard {
+	-webkit-transition: -webkit-filter 300ms;
+	-moz-transition: -moz-filter 300ms;
+	-o-transition: -o-filter 300ms;
+	transition: filter 300ms;
+}
+
+#victory div,
+#completion div {
+	position: absolute;
+	top: 50%;
+	right: 0;
+	left: 0;
+
+	transform: translate(0, -50%);
+}
+
+#victory .title,
+#completion .title {
+	font-family: 'Permanent Marker', cursive;
+	font-size: 40px;
+	line-height: 40px;
+
+	margin-bottom: 20px;
+}
+
+#victory p,
+#completion p {
+	font-size: 20px;
+	font-weight: bold;
+	line-height: 20px;
+}
+
+
+/* === Buttons === */
+
+.buttonPlacer {
+	position: absolute;
+	top: 10px;
+}
+
+.round-button {
+	width: 30px;
+}
+
+.round-button div p:hover {
+	background-color: #888;
+}
+
+.round-button p.ttl {
+	font-size: 15px;
+	font-weight: bold;
+}
+
+.round-button p.ttl.g {
+	margin-left: -4px;
+}
+
+.round-button p.ttl.m {
+	margin-left: -2px;
+}
+
+.round-button p.ttl.h {
+	margin-left: 2px;
+}
+
+.round-button div p.fakeHover {
+	background-color: #ffa76c;
+}
+
+.round-button-circle {
+	overflow: hidden;
+
+	width: 100%;
+	height: 0;
+	padding-bottom: 100%;
+
+	border: 2px solid #888;
+	border-radius: 50%;
+	box-shadow: 0 0 3px #888;
+}
+
+.round-button div p {
+	font-size: 1.2em;
+	font-weight: bold;
+	line-height: 1em;
+
+	width: 100%;
+	margin-top: -.5em;
+	padding-top: 50%;
+	padding-bottom: 50%;
+
+	-webkit-transition: background-color 200ms ease;
+	-ms-transition: background-color 200ms ease;
+	transition: background-color 200ms ease;
+}
