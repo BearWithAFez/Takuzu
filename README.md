@@ -24,19 +24,17 @@ If you have any remarks please hit me up, this is a learning experience.
 
 Last done: 
 
-* Fully complete functionality
-* Reset progress functionality
-* Split the CSS
-* Clean up the CSS
-* Fonts linked locally
-* Fixed bug: "Rapidly clicking doesn't have the desired SFX."
+* Cleaned up the JS, the entire JS... Wow.
+* Tested on Chrome, Firefox, Edge (forgive me) and IE (But it doesnt work and yeah).
+* And also added a cheeky 5 puzzles ;)
 
 Todo:
 
-* Clean up the JS
 * More puzzles...
 * Fully test on other browsers than CHROME
+* Fixed the autoplay bug
 
 Known errors:
 
-* Flipping rapidly can break the UI.
+* Flipping rapidly can break the UI.(Is a timing one, should be fixed...)
+* It doesn't work on IE. And I can't be bothered to fix it.

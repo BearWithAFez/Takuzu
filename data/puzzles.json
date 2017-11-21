@@ -1,166 +1,201 @@
 {
-	"Easy": [
+	"Name": "Takuzu Puzzles",
+	"Author": "Dwight Van der Velpen",
+	"Diff": [
 	{
-		"id": 1,
-		"code": "1ee0eeee00e1e00ee1eeeeee00e1eee1ee00"
+		"Name": "Easy",
+		"Puzzle": [
+		{
+			"Id": 1,
+			"Code": "1ee0eeee00e1e00ee1eeeeee00e1eee1ee00"
+		},
+		{
+			"Id": 2,
+			"Code": "ee0ee11e00eee1eeeeeeee1eee1ee000e1ee"
+		},
+		{
+			"Id": 3,
+			"Code": "e0eeee1ee00eeeee0e0ee1eeee0eeee1eee0"
+		},
+		{
+			"Id": 4,
+			"Code": "1e11e0e0eeee1ee0e01eee10e1e1ee0e0e11"
+		},
+		{
+			"Id": 5,
+			"Code": "00ee110eeee1e0e0ee1e00e0eeeeee11ee00"
+		},
+		{
+			"Id": 6,
+			"Code": "0ee0e100ee11ee1eee1eeee0eee1ee11ee00"
+		},
+		{
+			"Id": 7,
+			"Code": "1e00eee00ee1eeeeeee0eee00ee11e0e11ee"
+		},
+		{
+			"Id": 8,
+			"Code": "11ee00e1ee0eee0eee0eeee100ee11ee1e1e"
+		},
+		{
+			"Id": 9,
+			"Code": "e0eee11e1eeeee1e0e0eeeeeeee11ee1eee0"
+		},
+		{
+			"Id": 10,
+			"Code": "1e00e0e11eeeeeee1e0eeee100ee11ee11ee"
+		},
+		{
+			"Id": 11,
+			"Code": "e0eeeeeeee0eee11e00ee1eeeeeeee0e00e1"
+		},
+		{
+			"Id": 12,
+			"Code": "0e0ee1eee1eee00e1e1eeee0e1eeee1e1ee0"
+		},
+		{
+			"Id": 13,
+			"Code": "e0eee10e11eeee1ee0e1eee0eeee1e11e0e0"
+		},
+		{
+			"Id": 14,
+			"Code": "0e11e1ee1e0ee0eeeee00eeeeeeee01e00e0"
+		},
+		{
+			"Id": 15,
+			"Code": "0ee11e00ee1eee1eeeeeeee11ee00e11ee0e"
+		}]
 	},
 	{
-		"id": 2,
-		"code": "ee0ee11e00eee1eeeeeeee1eee1ee000e1ee"
+		"Name": "Normal",
+		"Puzzle": [
+		{
+			"Id": 1,
+			"Code": "eeee00eeeeeee1eeee01e1ee0eee0eee1eee"
+		},
+		{
+			"Id": 2,
+			"Code": "e0eeee00eeeeeee0eeeeeeee1e11ee1ee1ee"
+		},
+		{
+			"Id": 3,
+			"Code": "ee00eee1eeee0eeeeeeeeee00ee0e0eeeeee"
+		},
+		{
+			"Id": 4,
+			"Code": "e1ee0e0eeee0eee10ee00eeeeeee0e1e1eee"
+		},
+		{
+			"Id": 5,
+			"Code": "e0e00eee1ee1e0eeeeeeeeee0e00eeeeeeee"
+		},
+		{
+			"Id": 6,
+			"Code": "10e0eeee1eeeeeeeeeeee00eeee0eeeeeee1"
+		},
+		{
+			"Id": 7,
+			"Code": "eeeeeeeee0ee0ee00e0eeeeeee0eee0e0eee"
+		},
+		{
+			"Id": 8,
+			"Code": "e0eee1eeeeee0ee1eee00ee100eeeeeeeeee"
+		},
+		{
+			"Id": 9,
+			"Code": "eee0eeeee00eeeeeeeee0ee1eeee11ee1eee"
+		},
+		{
+			"Id": 10,
+			"Code": "e0ee1eeee0e010eeee00eeeeeeee1eee1eee"
+		}]
 	},
 	{
-		"id": 3,
-		"code": "e0eeee1ee00eeeee0e0ee1eeee0eeee1eee0"
+		"Name": "Hard",
+		"Puzzle": [
+		{
+			"Id": 1,
+			"Code": "eee1eeee0ee10eee0ee11eeeeeeeee1eee0e"
+		},
+		{
+			"Id": 2,
+			"Code": "e11ee100eeeeeeeeeeee1ee0eeeeeeeee0ee"
+		},
+		{
+			"Id": 3,
+			"Code": "1e0ee0eeeeeee11eeee1ee1eeeeee0ee01ee"
+		},
+		{
+			"Id": 4,
+			"Code": "ee11e1ee1eeeeeeee1eee1eeeeeeee0eeee0"
+		},
+		{
+			"Id": 5,
+			"Code": "11e0eee1ee0eeeeee0eeeeeee0ee1eee0eee"
+		},
+		{
+			"Id": 6,
+			"Code": "0e0ee0e1ee1eeeeeeeee0e0eeeeeee0eeeee"
+		},
+		{
+			"Id": 7,
+			"Code": "eeee00e1ee0eeeeeeeeeeee11e1eeeeee1ee"
+		},
+		{
+			"Id": 8,
+			"Code": "0eeeee0e00eee1eeeeeeeeee0eeee0eeee0e"
+		},
+		{
+			"Id": 9,
+			"Code": "ee1ee0eeeeeeee0e0eee00ee0ee00eeeeeee"
+		},
+		{
+			"Id": 10,
+			"Code": "ee0eee1e0e0eeeeeeee1e0ee01ee0e1eeee1"
+		}]
 	},
 	{
-		"id": 4,
-		"code": "1e11e0e0eeee1ee0e01eee10e1e1ee0e0e11"
-	},
-	{
-		"id": 5,
-		"code": "00ee110eeee1e0e0ee1e00e0eeeeee11ee00"
-	},
-	{
-		"id": 6,
-		"code": "0ee0e100ee11ee1eee1eeee0eee1ee11ee00"
-	},
-	{
-		"id": 7,
-		"code": "1e00eee00ee1eeeeeee0eee00ee11e0e11ee"
-	},
-	{
-		"id": 8,
-		"code": "11ee00e1ee0eee0eee0eeee100ee11ee1e1e"
-	},
-	{
-		"id": 9,
-		"code": "e0eee11e1eeeee1e0e0eeeeeeee11ee1eee0"
-	},
-	{
-		"id": 10,
-		"code": "1e00e0e11eeeeeee1e0eeee100ee11ee11ee"
-	}],
-	"Normal": [
-	{
-		"id": 1,
-		"code": "eeee00eeeeeee1eeee01e1ee0eee0eee1eee"
-	},
-	{
-		"id": 2,
-		"code": "e0eeee00eeeeeee0eeeeeeee1e11ee1ee1ee"
-	},
-	{
-		"id": 3,
-		"code": "ee00eee1eeee0eeeeeeeeee00ee0e0eeeeee"
-	},
-	{
-		"id": 4,
-		"code": "e1ee0e0eeee0eee10ee00eeeeeee0e1e1eee"
-	},
-	{
-		"id": 5,
-		"code": "e0e00eee1ee1e0eeeeeeeeee0e00eeeeeeee"
-	},
-	{
-		"id": 6,
-		"code": "10e0eeee1eeeeeeeeeeee00eeee0eeeeeee1"
-	},
-	{
-		"id": 7,
-		"code": "eeeeeeeee0ee0ee00e0eeeeeee0eee0e0eee"
-	},
-	{
-		"id": 8,
-		"code": "e0eee1eeeeee0ee1eee00ee100eeeeeeeeee"
-	},
-	{
-		"id": 9,
-		"code": "eee0eeeee00eeeeeeeee0ee1eeee11ee1eee"
-	},
-	{
-		"id": 10,
-		"code": "e0ee1eeee0e010eeee00eeeeeeee1eee1eee"
-	}],
-	"Hard": [
-	{
-		"id": 1,
-		"code": "eee1eeee0ee10eee0ee11eeeeeeeee1eee0e"
-	},
-	{
-		"id": 2,
-		"code": "e11ee100eeeeeeeeeeee1ee0eeeeeeeee0ee"
-	},
-	{
-		"id": 3,
-		"code": "1e0ee0eeeeeee11eeee1ee1eeeeee0ee01ee"
-	},
-	{
-		"id": 4,
-		"code": "ee11e1ee1eeeeeeee1eee1eeeeeeee0eeee0"
-	},
-	{
-		"id": 5,
-		"code": "11e0eee1ee0eeeeee0eeeeeee0ee1eee0eee"
-	},
-	{
-		"id": 6,
-		"code": "0e0ee0e1ee1eeeeeeeee0e0eeeeeee0eeeee"
-	},
-	{
-		"id": 7,
-		"code": "eeee00e1ee0eeeeeeeeeeee11e1eeeeee1ee"
-	},
-	{
-		"id": 8,
-		"code": "0eeeee0e00eee1eeeeeeeeee0eeee0eeee0e"
-	},
-	{
-		"id": 9,
-		"code": "ee1ee0eeeeeeee0e0eee00ee0ee00eeeeeee"
-	},
-	{
-		"id": 10,
-		"code": "ee0eee1e0e0eeeeeeee1e0ee01ee0e1eeee1"
-	}],
-	"VHard": [
-	{
-		"id": 1,
-		"code": "eeee00eeeeeee1eeee01e1ee0eee0eee1eee"
-	},
-	{
-		"id": 2,
-		"code": "e0eeee00eeeeeee0eeeeeeee1e11ee1ee1ee"
-	},
-	{
-		"id": 3,
-		"code": "ee00eee1eeee0eeeeeeeeee00ee0e0eeeeee"
-	},
-	{
-		"id": 4,
-		"code": "eeeee00eeeeeeeee1ee1e0eeee00eeeeeee0"
-	},
-	{
-		"id": 5,
-		"code": "11eeeeeeeeeeeeeee1e0e0eeeeeee1e11eee"
-	},
-	{
-		"id": 6,
-		"code": "eeee111eeeeeeee11eeeeee01e1eeeeeeeee"
-	},
-	{
-		"id": 7,
-		"code": "eee0eee1ee0eee0eeee00eeeeeee0eeeeee0"
-	},
-	{
-		"id": 8,
-		"code": "0eee0e1ee0eeeeeeeee1eeeee11e0eee1eee"
-	},
-	{
-		"id": 9,
-		"code": "e1ee0e1eeeeeeee0e0e00ee0eee0eeeee0ee"
-	},
-	{
-		"id": 10,
-		"code": "ee1e00eeeeeeeeee11eeeeeeeee1eee0ee0e"
+		"Name": "VHard",
+		"Puzzle": [
+		{
+			"Id": 1,
+			"Code": "eeee00eeeeeee1eeee01e1ee0eee0eee1eee"
+		},
+		{
+			"Id": 2,
+			"Code": "e0eeee00eeeeeee0eeeeeeee1e11ee1ee1ee"
+		},
+		{
+			"Id": 3,
+			"Code": "ee00eee1eeee0eeeeeeeeee00ee0e0eeeeee"
+		},
+		{
+			"Id": 4,
+			"Code": "eeeee00eeeeeeeee1ee1e0eeee00eeeeeee0"
+		},
+		{
+			"Id": 5,
+			"Code": "11eeeeeeeeeeeeeee1e0e0eeeeeee1e11eee"
+		},
+		{
+			"Id": 6,
+			"Code": "eeee111eeeeeeee11eeeeee01e1eeeeeeeee"
+		},
+		{
+			"Id": 7,
+			"Code": "eee0eee1ee0eee0eeee00eeeeeee0eeeeee0"
+		},
+		{
+			"Id": 8,
+			"Code": "0eee0e1ee0eeeeeeeee1eeeee11e0eee1eee"
+		},
+		{
+			"Id": 9,
+			"Code": "e1ee0e1eeeeeeee0e0e00ee0eee0eeeee0ee"
+		},
+		{
+			"Id": 10,
+			"Code": "ee1e00eeeeeeeeee11eeeeeeeee1eee0ee0e"
+		}]
 	}]
 }
