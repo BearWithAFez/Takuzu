@@ -8,7 +8,7 @@ Why is this made? To challenge myself and have a productive project in Fall 2017
 
 ## Built With
 
-* [Sublbv ime 3](https://www.sublimetext.com/3) - The editor
+* [Sublbime 3](https://www.sublimetext.com/3) - The editor
 * [Photoshop](http://www.adobe.com/be_nl/products/photoshop.html) - The images
 * [Wamp](http://www.wampserver.com/en/) - LocalHost testing
 
@@ -24,15 +24,14 @@ If you have any remarks please hit me up, this is a learning experience.
 
 Last done: 
 
-* Cleaned up the JS, the entire JS... Wow.
-* Tested on Chrome, Firefox, Edge (forgive me) and IE (But it doesnt work and yeah).
-* And also added a cheeky 5 puzzles ;)
+* Made it so that each difficulty has 25 puzzles, totalling in whopping 100 puzzles!
 
 Todo:
 
-* More puzzles...
-* Fully test on other browsers than CHROME
-* Fixed the autoplay bug
+* The App.
+* A puzzle solver and generator
+
+But they are both seperate applications, so consider this finished.
 
 Known errors:
 
