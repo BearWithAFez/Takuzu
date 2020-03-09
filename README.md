@@ -4,7 +4,7 @@ A simple Takuzu game made with jQuery and such.
 ## Getting Started
 
 Just go to the link next to the title, and you'll see the current version in action!
-Why is this made? To challenge myself and have a productive project in Fall 2017. 
+Why is this made? To challenge myself and have a productive project.
 
 ## Built With
 
